@@ -120,7 +120,7 @@
       backdrop-filter: blur(3px);
       box-sizing: border-box;
     }
-    .horario-title, .form-title {
+    .horario-title {
       font-family: 'Raleway', Arial, sans-serif;
       font-size: 1.15rem;
       font-weight: 700;
@@ -129,7 +129,7 @@
       text-align: center;
       margin-bottom: 0.25em;
     }
-    .horario-big, .form-big {
+    .horario-big {
       font-family: 'Raleway', Arial, sans-serif;
       font-weight: 100;
       font-size: 2.1rem;
@@ -163,73 +163,48 @@
       text-align: right;
       font-weight: 400;
     }
-    .contact-form {
-      width: 100%;
-      font-family: 'Lora', serif;
-      font-size: 1.1rem;
+
+    /* Contact info box style, matches horario-box for harmony */
+    .contact-info-box {
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      border: 1.5px solid #25508C;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      max-width: 410px;
+      width: 370px;
+      padding: 32px 24px;
+      font-size: 1.13rem;
       color: #222;
-      margin: 0;
-      padding: 0;
+      font-family: 'Lora', serif;
+      text-align: center;
       display: flex;
       flex-direction: column;
-      gap: 14px;
-    }
-    .contact-form label {
-      font-weight: 700;
-      font-size: 1rem;
-      margin-bottom: 2px;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      border: 1px solid #bbb;
-      border-radius: 6px;
-      padding: 8px;
-      font-family: inherit;
-      width: 100%;
-      resize: none;
-      font-size: 1rem;
-      background: #f7fafd;
+      align-items: center;
+      justify-content: center;
       box-sizing: border-box;
     }
-    .contact-form textarea {
-      min-height: 80px;
-      max-width: 100%;
-      font-size: 1rem;
+    .contact-info-box a {
+      color: #25508C;
+      text-decoration: underline;
+      word-break: break-all;
     }
-    .contact-form button {
-      margin-top: 10px;
-      background: #25508C;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      font-size: 1.08rem;
-      font-family: 'Raleway', Arial, sans-serif;
-      font-weight: bold;
-      letter-spacing: 1px;
-      padding: 12px 0;
-      cursor: pointer;
-      transition: background 0.2s;
-      width: 100%;
-    }
-    .contact-form button:hover {
-      background: #3870C2;
-    }
+
     @media (max-width: 900px) {
       .main-section {
         flex-direction: column;
         gap: 34px;
         align-items: center;
       }
-      .horario-box {
+      .horario-box, .contact-info-box {
         width: 95vw;
         max-width: 410px;
       }
     }
     @media (max-width: 600px) {
-      .horario-box {
+      .horario-box, .contact-info-box {
         padding: 16px 3vw 14px 3vw;
       }
-      .horario-big, .form-big {
+      .horario-big {
         font-size: 1.4rem;
       }
     }
@@ -263,22 +238,11 @@
         <li><span class="horario-day">Sábado</span> <span class="horario-hour">9:00 a 17:00</span></li>
       </ul>
     </div>
-    <!-- Formulario cuadro -->
-    <div class="horario-box">
-      <div class="form-title">CONTÁCTANOS</div>
-      <div class="form-big">FORMULARIO</div>
-      <form class="contact-form" action="https://formspree.io/f/tuclave" method="POST" autocomplete="off">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-
-        <button type="submit">Enviar</button>
-      </form>
+    <!-- Contact info box -->
+    <div class="contact-info-box">
+      Si tienes alguna pregunta acerca de nuestros servicios, envía un e-mail a
+      <a href="mailto:feacreformistas@gmail.com">feacreformistas@gmail.com</a> y en breve nos pondremos en contacto contigo.<br>
+      También nos puedes llamar en horarios de oficina.
     </div>
   </section>
 </body>
