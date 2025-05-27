@@ -97,12 +97,12 @@
     .main-section {
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      align-items: flex-start;
+      justify-content: center;         /* Centrado horizontal */
+      align-items: center;             /* Centrado vertical */
       width: 100vw;
-      min-height: 60vh;
-      padding: 60px 0 60px 0;
+      min-height: calc(100vh - 190px); /* Ajusta este valor si el header/navbar es más alto/bajo */
       gap: 34px;
+      padding: 30px 0;
     }
     .horario-box {
       background: rgba(255,255,255,0.80);
@@ -112,7 +112,7 @@
       max-width: 410px;
       width: 370px;
       padding: 38px 28px 34px 28px;
-      margin: 0 auto;
+      margin: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -163,7 +163,6 @@
       text-align: right;
       font-weight: 400;
     }
-    /* Contact info box style, matches horario-box for harmony */
     .contact-info-box {
       background: rgba(255,255,255,0.85);
       border-radius: 12px;
@@ -187,11 +186,20 @@
       text-decoration: underline;
       word-break: break-all;
     }
+    .contact-phones {
+      margin-top: 14px;
+      font-weight: bold;
+      color: #25508C;
+      font-size: 1.08rem;
+      letter-spacing: 1px;
+    }
     @media (max-width: 900px) {
       .main-section {
         flex-direction: column;
         gap: 34px;
         align-items: center;
+        min-height: unset;
+        padding: 30px 0;
       }
       .horario-box, .contact-info-box {
         width: 95vw;
@@ -240,11 +248,10 @@
     <div class="contact-info-box">
       Si tienes alguna pregunta acerca de nuestros servicios, envía un e-mail a
       <a href="mailto:feacreformistas@gmail.com">feacreformistas@gmail.com</a> y en breve nos pondremos en contacto contigo.<br>
-     
-       <!-- Contact info box -->
-    <div class="contact-info-box">
       También nos puedes llamar en horarios de oficina.
-      93.119.23.18-695.143.185-622.556.854
+      <div class="contact-phones">
+        93.119.23.18 &nbsp;·&nbsp; 695.143.185 &nbsp;·&nbsp; 622.556.854
+      </div>
     </div>
   </section>
 </body>
