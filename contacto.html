@@ -231,3 +231,34 @@
   </section>
 </body>
 </html>
+
+<?php
+// Cambia este correo por el tuyo
+$destino = "feacreformistas@gmail.com";
+$nombre = isset($_POST["nombre"]) ? $_POST["nombre"] : "";
+$email = isset($_POST["email"]) ? $_POST["email"] : "";
+$mensaje = isset($_POST["mensaje"]) ? $_POST["mensaje"] : "";
+
+// Validar campos mínimos
+if (empty($nombre) || empty($email) || empty($mensaje)) {
+    header("Location: error.html");
+    exit;
+}
+
+// Validar email
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    header("Location: error.html");
+    exit;
+}
+
+$contenido = "Nombre: $nombre\nCorreo: $email\nMensaje: $mensaje";
+$headers = "From: $email\r\nReply-To: $email\r\n";
+
+// Enviar y redirigir
+if (mail($destino, "Nuevo mensaje de formulario", $contenido, $headers)) {
+    header("Location: gracias.html");
+} else {
+    header("Location: error.html");
+}
+exit;
+?>
