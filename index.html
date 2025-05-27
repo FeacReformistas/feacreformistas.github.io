@@ -13,13 +13,13 @@
       margin: 0;
       font-family: 'Raleway', Arial, sans-serif;
     }
-    /* Logo grande centrado con sombra/fondo oscuro */
+    /* Logo centrado grande */
     .logo-feac-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-end;
-      min-height: 220px;
+      min-height: 180px;
       width: 100vw;
       margin-top: 32px;
     }
@@ -27,9 +27,9 @@
       background: rgba(0,0,0,0.40);
       border-radius: 18px;
       padding: 30px 48px 22px 48px;
-      margin-bottom: 0;
       box-shadow: 0 6px 32px rgba(0,0,0,0.16);
       text-align: center;
+      margin-bottom: 0;
     }
     .logo-feac .feac {
       font-family: 'Raleway', Arial, sans-serif;
@@ -52,7 +52,7 @@
       text-shadow: 1px 2px 8px #000, 0 1px 7px #25508c33;
     }
 
-    /* Barra azul centrada */
+    /* Barra azul horizontal centrada */
     .custom-navbar {
       display: flex;
       justify-content: center;
@@ -63,13 +63,14 @@
       min-width: 320px;
       max-width: 900px;
       margin: 0 auto 0 auto;
-      border-radius: 0px 0px 9px 9px;
+      border-radius: 0 0 9px 9px;
       box-shadow: 0 7px 24px rgba(0,0,0,0.12);
       position: relative;
       z-index: 20;
       margin-bottom: 36px;
     }
     .custom-navbar .nav {
+      display: flex;
       flex-direction: row;
       width: 100%;
       justify-content: center;
@@ -86,12 +87,15 @@
       text-decoration: none;
       transition: color 0.17s;
       text-shadow: 1px 1px 2px #00000044;
+      line-height: 58px;
+      display: inline-block;
     }
     .custom-navbar .nav-link.active,
     .custom-navbar .nav-link:hover {
       color: #bcd9fa;
       text-decoration: underline;
     }
+
     /* HERO */
     .hero-outer {
       display: flex;
@@ -204,6 +208,7 @@
         height: 140px;
         min-height: 90px;
       }
+      .custom-navbar { width: 100vw;}
     }
   </style>
 </head>
@@ -215,7 +220,7 @@
       <span class="reformistas">REFORMISTAS</span>
     </div>
   </div>
-  <!-- Barra azul centrada -->
+  <!-- Barra azul centrada y horizontal -->
   <nav class="custom-navbar">
     <ul class="nav">
       <li><a class="nav-link active" href="#">INICIO</a></li>
