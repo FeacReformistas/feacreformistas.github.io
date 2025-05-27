@@ -14,54 +14,76 @@
   <!-- Custom styles for this template -->
   <link href="css/business-casual.min.css" rel="stylesheet">
   <style>
-    /* Barra azul estilo "Nosotros" */
-    .feac-navbar {
-      background: #25508C;
+    /* Barra azul estilo imagen */
+    .custom-navbar {
       width: 100vw;
-      left: 0;
-      right: 0;
-      top: 0;
-      margin: 0;
-      padding: 0;
-      border: none;
-      min-height: 64px;
+      background: #25508C;
+      min-height: 70px;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
+      margin: 0;
+      padding: 0;
+      border: none;
       z-index: 10;
+      position: relative;
+      font-family: 'Raleway', Arial, sans-serif;
     }
-    .feac-navbar .navbar-nav {
-      flex-direction: row;
+    .custom-navbar ul {
+      display: flex;
       justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
       width: 100%;
+      max-width: 900px;
+      height: 70px;
     }
-    .feac-navbar .nav-link {
-      color: #fff !important;
+    .custom-navbar li {
+      flex: 1 1 0;
+      text-align: center;
+    }
+    .custom-navbar a {
+      display: inline-block;
+      color: #fff;
+      font-family: 'Raleway', Arial, sans-serif;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 1px;
-      padding-left: 2.2rem !important;
-      padding-right: 2.2rem !important;
+      padding: 0.7em 1.7em;
       font-size: 1.1rem;
       opacity: 0.93;
-      transition: opacity 0.2s;
+      text-decoration: none;
+      transition: opacity 0.2s, color 0.2s;
+      border: none;
+      background: none;
     }
-    .feac-navbar .nav-item.active .nav-link,
-    .feac-navbar .nav-link:focus,
-    .feac-navbar .nav-link:hover {
+    .custom-navbar a.active,
+    .custom-navbar a:hover,
+    .custom-navbar a:focus {
       opacity: 1;
       text-decoration: underline;
     }
-    @media (max-width: 991.98px) {
-      .feac-navbar .navbar-nav {
+    .custom-navbar a.disabled {
+      opacity: 0.4;
+      pointer-events: none;
+      cursor: default;
+    }
+    @media (max-width: 900px) {
+      .custom-navbar ul {
         flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
+        height: auto;
       }
-      .feac-navbar .nav-link {
-        padding-left: 1.5rem !important;
-        padding-right: 1.5rem !important;
+      .custom-navbar li {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      .custom-navbar a {
+        width: 100%;
+        display: block;
+        padding: 1em 0;
         font-size: 1rem;
       }
     }
@@ -79,36 +101,21 @@
   </style>
 </head>
 <body>
-  <!-- Barra azul superior -->
-  <nav class="navbar feac-navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid px-0">
-      <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span> Menu
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item px-lg-4">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link" href="servicios.html">Servicios</a>
-          </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link" href="nosotros.html">Nosotros</a>
-          </li>
-          <li class="nav-item active px-lg-4">
-            <a class="nav-link" href="contacto.html">Contacto</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <!-- Encabezado FEAC Reformistas -->
+  <div style="text-align:center; margin-top: 38px; margin-bottom: 20px;">
+    <span class="site-heading-lower" style="font-size:3.3rem; color:#fff; font-family:'Raleway', Arial, sans-serif; font-weight:100;">FEAC</span>
+    <span class="site-heading-upper" style="font-size:2.2rem; color:#5ca5e8; font-family:'Raleway', Arial, sans-serif; font-weight:900;">REFORMISTAS</span>
+  </div>
 
-  <h1 class="site-heading text-center text-white d-none d-lg-block">
-    <span class="site-heading-lower">FEAC</span>
-    <span class="site-heading-upper text-primary mb-3">reformistas</span>
-  </h1>
+  <!-- Barra azul menú -->
+  <nav class="custom-navbar">
+    <ul>
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="servicios.html">SERVICIOS</a></li>
+      <li><a href="nosotros.html">NOSOTROS</a></li>
+      <li><a href="contacto.html" class="active">CONTACTO</a></li>
+    </ul>
+  </nav>
 
   <section class="page-section cta">
     <div class="container">
