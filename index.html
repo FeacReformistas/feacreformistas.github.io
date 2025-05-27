@@ -51,7 +51,6 @@
       margin-top: 12px;
       text-shadow: 1px 2px 8px #000, 0 1px 7px #25508c33;
     }
-
     /* Barra azul centrada y horizontal */
     .custom-navbar {
       display: flex;
@@ -97,7 +96,6 @@
       color: #bcd9fa;
       text-decoration: underline;
     }
-
     /* HERO */
     .hero-outer {
       display: flex;
@@ -185,6 +183,56 @@
       background-color: #3870C2;
       color: #fff;
     }
+
+    /* NUEVA SECCIÓN AZUL DE SERVICIOS */
+    .servicios-section {
+      background: #5B7FC1;
+      width: 100vw;
+      padding: 60px 0 70px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .servicios-container {
+      background: #f3f6fb;
+      border: 3px solid #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 0 2px #3b4e6e;
+      padding: 38px 48px 32px 48px;
+      max-width: 820px;
+      width: 90vw;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .servicios-container h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #232323;
+      margin: 0 0 8px 0;
+      letter-spacing: 1px;
+    }
+    .servicios-container h2 {
+      font-size: 2.5rem;
+      font-weight: 100;
+      color: #5B7FC1;
+      margin: 0 0 24px 0;
+      letter-spacing: 2px;
+    }
+    .servicios-container p {
+      color: #232323;
+      font-size: 1.12rem;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .footer-text {
+      text-align: center;
+      color: #bfc7d5;
+      font-size: 0.97rem;
+      padding: 16px 0 14px 0;
+      background: #2a3040;
+      letter-spacing: 0.5px;
+    }
+    /* Responsive */
     @media (max-width: 1100px) {
       .logo-feac-container { min-height: 150px;}
       .hero-inner { width: 99vw; height: 260px; }
@@ -211,6 +259,15 @@
         min-height: 90px;
       }
       .custom-navbar { width: 100vw;}
+      .servicios-container {
+        padding: 16px 8vw 14px 8vw;
+      }
+      .servicios-section {
+        padding: 36px 0 36px 0;
+      }
+      .servicios-container h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -246,19 +303,7 @@
       </div>
     </div>
   </div>
-</body>
-</html>
- <h2>SERVICIOS 24 HORAS</h2>
-        <h1>FEAC<br>REFORMISTAS</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla dignissim facilisis. Phasellus nec vulputate nulla. Aenean euismod lectus ac massa vehicula, ac venenatis eros posuere. Curabitur in aliquam erat, in eleifend nisl. Nullam pellentesque facilisis eros, vel feugiat nisi rutrum a. Phasellus neque ligula, efficitur id egestas eget, rhoncus vel mauris. Praesent sit amet nisi vitae velit congue tempus.
-        </p>
-        <a href="#" class="btn-feac">Contáctanos</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- NUEVA SECCIÓN COMO EN LA IMAGEN 10 -->
+  <!-- NUEVA SECCIÓN COMO EN LA IMAGEN 9 -->
   <section class="servicios-section">
     <div class="servicios-container">
       <h3>SERVICIOS</h3>
@@ -271,7 +316,6 @@
       </p>
     </div>
   </section>
-
   <footer>
     <div class="footer-text">
       Copyright © FEAC Reformistas 2018
