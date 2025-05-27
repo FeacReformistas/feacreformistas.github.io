@@ -2,19 +2,40 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FEAC Reformistas</title>
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom fonts for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="css/business-casual.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
   <style>
-    /* Barra azul estilo imagen */
+    body {
+      background: url('img/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Raleway', Arial, sans-serif;
+    }
+    .logo-header {
+      text-align: left;
+      padding: 50px 0 20px 50px;
+      font-family: 'Raleway', Arial, sans-serif;
+    }
+    .logo-header .site-heading-lower {
+      font-size: 3.3rem;
+      color: #222;
+      font-weight: 100;
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 0;
+    }
+    .logo-header .site-heading-upper {
+      font-size: 2.2rem;
+      color: #5ca5e8;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      display: block;
+      margin-top: 0;
+    }
+    /* Barra azul navegación */
     .custom-navbar {
       width: 100vw;
       background: #25508C;
@@ -25,19 +46,16 @@
       margin: 0;
       padding: 0;
       border: none;
-      z-index: 10;
-      position: relative;
-      font-family: 'Raleway', Arial, sans-serif;
     }
     .custom-navbar ul {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0 auto;
+      margin: 0;
       padding: 0;
       list-style: none;
       width: 100%;
-      max-width: 900px;
+      max-width: 950px;
       height: 70px;
     }
     .custom-navbar li {
@@ -52,7 +70,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       padding: 0.7em 1.7em;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       opacity: 0.93;
       text-decoration: none;
       transition: opacity 0.2s, color 0.2s;
@@ -71,43 +89,82 @@
       cursor: default;
     }
     @media (max-width: 900px) {
-      .custom-navbar ul {
-        flex-direction: column;
-        height: auto;
-      }
-      .custom-navbar li {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-      }
-      .custom-navbar a {
-        width: 100%;
-        display: block;
-        padding: 1em 0;
-        font-size: 1rem;
-      }
+      .logo-header { padding-left: 10vw; }
+      .custom-navbar ul { flex-direction: column; height: auto; }
+      .custom-navbar a { width: 100%; display: block; padding: 1em 0; font-size: 1rem; }
     }
-    /* Google Form responsive */
-    #google-form {
+    /* Ejemplo de contenido debajo */
+    .main-section {
+      background: rgba(67, 119, 190, 0.65);
+      min-height: 100vh;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .content-box {
+      background: #f7fafd;
+      border-radius: 10px;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.08);
+      margin-top: 40px;
+      padding: 40px 32px 24px 32px;
+      max-width: 700px;
       width: 100%;
-      min-height: 650px;
-      border: none;
     }
-    @media (max-width: 575.98px) {
-      #google-form {
-        min-height: 900px;
+    .content-box h2 {
+      font-family: 'Raleway', Arial, sans-serif;
+      font-weight: 700;
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 0.2em;
+      letter-spacing: 2px;
+    }
+    .content-box h1 {
+      font-family: 'Raleway', Arial, sans-serif;
+      font-weight: 100;
+      text-align: center;
+      font-size: 2.4rem;
+      margin-top: 0;
+      letter-spacing: 2px;
+      margin-bottom: 1.3em;
+      color: #25508C;
+    }
+    .service-hours {
+      width: 100%;
+      margin: 0 auto 1.2em auto;
+      font-size: 1.07rem;
+    }
+    .service-hours tr th,
+    .service-hours tr td {
+      padding: 5px 10px;
+      font-family: 'Lora', serif;
+    }
+    .service-hours tr th {
+      font-weight: 700;
+      text-align: left;
+    }
+    .service-hours tr td {
+      text-align: right;
+    }
+    @media (max-width: 600px) {
+      .content-box {
+        padding: 18px 4vw 12px 4vw;
+        max-width: 99vw;
+      }
+      .main-section {
+        padding: 16px 0 30px 0;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Encabezado FEAC Reformistas -->
-  <div style="text-align:center; margin-top: 38px; margin-bottom: 20px;">
-    <span class="site-heading-lower" style="font-size:3.3rem; color:#fff; font-family:'Raleway', Arial, sans-serif; font-weight:100;">FEAC</span>
-    <span class="site-heading-upper" style="font-size:2.2rem; color:#5ca5e8; font-family:'Raleway', Arial, sans-serif; font-weight:900;">REFORMISTAS</span>
+  <div class="logo-header">
+    <span class="site-heading-lower">FEAC</span>
+    <span class="site-heading-upper">REFORMISTAS</span>
   </div>
 
-  <!-- Barra azul menú -->
   <nav class="custom-navbar">
     <ul>
       <li><a href="index.html">INICIO</a></li>
@@ -117,99 +174,20 @@
     </ul>
   </nav>
 
-  <section class="page-section cta">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <div class="cta-inner text-center rounded">
-            <h2 class="section-heading mb-5">
-              <span class="section-heading-upper">Horarios de</span>
-              <span class="section-heading-lower">Servicio</span>
-            </h2>
-            <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
-              <li class="list-unstyled-item list-hours-item d-flex">
-                Domingo
-                <span class="ml-auto">Closed</span>
-              </li>
-              <li class="list-unstyled-item list-hours-item d-flex">
-                Lunes
-                <span class="ml-auto"> 8:00 a 19:00 </span>
-              </li>
-              <li class="list-unstyled-item list-hours-item d-flex">
-                Martes
-                <span class="ml-auto"> 8:00 a 19:00 </span>
-              </li>
-              <li class="list-unstyled-item list-hours-item d-flex">
-                Miércoles
-                <span class="ml-auto"> 8:00 a 19:00 </span>
-              </li>
-              <li class="list-unstyled-item list-hours-item d-flex">
-                Jueves
-                <span class="ml-auto"> 8:00 a 19:00 </span>
-              </li>
-              <li class="list-unstyled-item list-hours-item d-flex">
-                Viernes
-                <span class="ml-auto"> 8:00 a 19:00 </span>
-              </li>
-              <li class="list-unstyled-item list-hours-item d-flex">
-                Sábado
-                <span class="ml-auto"> 9:00 a 17:00 </span>
-              </li>
-            </ul>
-            <p class="address mb-5">
-              <em>
-                <strong>Calle Art 95</strong>
-                <br>
-                08042, Barcelona
-              </em>
-            </p>
-            <p class="mb-0">
-              <small>
-                <em>24 horas</em>
-              </small>
-              <br>
-              Si tienes alguna pregunta acerca de nuestros servicios, por favor envía un e-mail y en breve nos pondremos en contacto contigo a Feacreformistas@gmail.com <br>
-              También nos puedes llamar en horarios de oficina. <br>
-              93.192.23.18 - 695.14.31.85 - 622.55.68.54 <br>
-            </p>
-          </div>
-        </div>
-      </div>
+  <section class="main-section">
+    <div class="content-box">
+      <h2>HORARIOS DE</h2>
+      <h1>SERVICIO</h1>
+      <table class="service-hours">
+        <tr><th>Domingo</th><td>Closed</td></tr>
+        <tr><th>Lunes</th><td>8:00 a 19:00</td></tr>
+        <tr><th>Martes</th><td>8:00 a 19:00</td></tr>
+        <tr><th>Miércoles</th><td>8:00 a 19:00</td></tr>
+        <tr><th>Jueves</th><td>8:00 a 19:00</td></tr>
+        <tr><th>Viernes</th><td>8:00 a 19:00</td></tr>
+        <tr><th>Sábado</th><td>9:00 a 17:00</td></tr>
+      </table>
     </div>
   </section>
-
-  <section class="page-section about-heading">
-    <div class="container">
-      <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
-      <div class="about-heading-content">
-        <div class="row">
-          <div class="col-xl-9 col-lg-10 mx-auto">
-            <div class="bg-faded rounded p-5">
-              <h2 class="section-heading mb-4">
-                <span class="section-heading-upper">Servicio 24 horas</span>
-                <span class="section-heading-lower">Contacta con nosotros</span>
-              </h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla dignissim facilisis. Phasellus nec vulputate nulla. Aenean euismod lectus ac massa vehicula, ac venenatis eros posuere. Curabitur in aliquam erat, in eleifend nisl. Nullam pellentesque facilisis eros, vel feugiat nisi rutrum a. Phasellus neque ligula, efficitur id egestas eget, rhoncus vel mauris. Praesent sit amet nisi vitae velit congue tempus.
-              </p>
-              <p class="mb-0">
-                <iframe id="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLScd8AgALi7VqNTflGWHvx-hqna9SUl03nErCcC62AHziJtnJg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Cargando...</iframe>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer text-faded text-center py-5">
-    <div class="container">
-      <p class="m-0 small">Copyright &copy; FEAC Reformistas 2018</p>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
