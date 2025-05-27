@@ -14,21 +14,28 @@
       margin: 0;
       font-family: 'Raleway', Arial, sans-serif;
     }
-    /* Logo centrado */
+    /* Logo centrado con sombra */
     .logo-feac {
       text-align: center;
       margin-top: 54px;
       margin-bottom: 32px;
-      color: #fff;
       letter-spacing: 2px;
+      /* Fondo negro translúcido para máxima visibilidad */
+      background: rgba(0,0,0,0.44);
+      display: inline-block;
+      padding: 18px 42px 14px 42px;
+      border-radius: 18px;
+      box-shadow: 0 6px 28px rgba(0,0,0,0.18);
     }
     .logo-feac .feac {
       font-family: 'Raleway', Arial, sans-serif;
       font-size: 3.2rem;
       font-weight: 100;
       letter-spacing: 5px;
-      line-height: 1;
       color: #fff;
+      text-shadow: 2px 3px 10px #000, 0 2px 8px #25508c66;
+      line-height: 1;
+      display: block;
     }
     .logo-feac .reformistas {
       font-family: 'Raleway', Arial, sans-serif;
@@ -38,9 +45,17 @@
       color: #2a5da6;
       display: block;
       margin-top: 7px;
+      text-shadow: 1px 2px 8px #000, 0 1px 8px #25508c66;
     }
 
-    /* Barra azul centrada */
+    .logo-feac-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+    }
+
+    /* Barra azul centrada con sombra */
     .custom-navbar {
       display: flex;
       justify-content: center;
@@ -50,7 +65,7 @@
       width: 80vw;
       margin: 0 auto 0 auto;
       border-radius: 0px 0px 9px 9px;
-      box-shadow: 0 2px 18px rgba(0,0,0,0.11);
+      box-shadow: 0 7px 24px rgba(0,0,0,0.21);
       position: relative;
       z-index: 20;
     }
@@ -66,6 +81,7 @@
       margin: 0 18px;
       letter-spacing: 1px;
       transition: color 0.17s;
+      text-shadow: 1px 1px 4px #00000044;
     }
     .custom-navbar .nav-link.active,
     .custom-navbar .nav-link:hover {
@@ -109,16 +125,15 @@
       width: 410px;
       max-width: 96vw;
       height: 100%;
-      background: rgba(255,255,255,0.96); /* Más opaco para mejor lectura */
+      background: rgba(255,255,255,0.98); /* Más opaco para máximo contraste */
       border-radius: 14px 0 0 14px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+      box-shadow: 0 12px 38px rgba(0,0,0,0.20);
       padding: 38px 38px 32px 38px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       font-family: 'Raleway', Arial, sans-serif;
       z-index: 2;
-      backdrop-filter: blur(2px);
       align-items: flex-start;
     }
     .glass-box h2 {
@@ -129,6 +144,7 @@
       text-transform: uppercase;
       margin-bottom: 3px;
       opacity: 0.98;
+      text-shadow: 0 1px 3px #fff, 1px 1px 2px #eee;
     }
     .glass-box h1 {
       font-size: 2.1rem;
@@ -137,12 +153,14 @@
       margin-bottom: 0.2em;
       color: #393939;
       line-height: 1.08;
+      text-shadow: 0 1px 4px #fff, 2px 2px 4px #eee;
     }
     .glass-box p {
       font-size: 1.05rem;
       color: #333;
       margin-bottom: 1.05em;
-      opacity: 0.97;
+      opacity: 0.99;
+      text-shadow: 0 1px 4px #fff, 2px 2px 4px #eee;
     }
     .btn-feac {
       background-color: #25508C;
@@ -189,10 +207,12 @@
   </style>
 </head>
 <body>
-  <!-- Logo centrado -->
-  <div class="logo-feac">
-    <span class="feac">FEAC</span>
-    <span class="reformistas">REFORMISTAS</span>
+  <!-- Logo centrado con fondo negro translúcido -->
+  <div class="logo-feac-container">
+    <div class="logo-feac">
+      <span class="feac">FEAC</span>
+      <span class="reformistas">REFORMISTAS</span>
+    </div>
   </div>
 
   <!-- Barra azul centrada -->
