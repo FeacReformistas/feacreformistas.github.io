@@ -37,7 +37,6 @@
       margin-top: 0;
       line-height: 1;
     }
-    /* Barra azul navegación */
     .custom-navbar {
       width: 100vw;
       background: #25508C;
@@ -95,16 +94,16 @@
       .custom-navbar ul { flex-direction: column; height: auto; }
       .custom-navbar a { width: 100%; display: block; padding: 1em 0; font-size: 1rem; }
     }
-    /* Cuadro translúcido */
-    .form-section {
+    .main-section {
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
       width: 100vw;
       min-height: 60vh;
       padding: 60px 0 60px 0;
+      gap: 34px;
     }
-    .form-box {
+    .horario-box {
       background: rgba(255,255,255,0.80);
       border-radius: 18px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.22);
@@ -119,7 +118,7 @@
       transition: box-shadow 0.2s;
       backdrop-filter: blur(3px);
     }
-    .form-title {
+    .horario-title, .form-title {
       font-family: 'Raleway', Arial, sans-serif;
       font-size: 1.15rem;
       font-weight: 700;
@@ -128,7 +127,7 @@
       text-align: center;
       margin-bottom: 0.25em;
     }
-    .form-big {
+    .horario-big, .form-big {
       font-family: 'Raleway', Arial, sans-serif;
       font-weight: 100;
       font-size: 2.1rem;
@@ -136,6 +135,31 @@
       margin: 0 0 1.1em 0;
       color: #25508C;
       text-align: center;
+    }
+    .horario-list {
+      width: 100%;
+      font-family: 'Lora', serif;
+      font-size: 1.12rem;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .horario-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #e9e9e9;
+    }
+    .horario-list li:last-child {
+      border-bottom: none;
+    }
+    .horario-day {
+      font-weight: 700;
+    }
+    .horario-hour {
+      text-align: right;
+      font-weight: 400;
     }
     .contact-form {
       width: 100%;
@@ -189,10 +213,10 @@
       background: #3870C2;
     }
     @media (max-width: 600px) {
-      .form-box {
+      .horario-box {
         padding: 16px 3vw 14px 3vw;
       }
-      .form-big {
+      .horario-big, .form-big {
         font-size: 1.4rem;
       }
     }
@@ -211,11 +235,27 @@
       <li><a href="contacto.html" class="active">CONTACTO</a></li>
     </ul>
   </nav>
-  <section class="form-section">
-    <div class="form-box">
+  <section class="main-section">
+    <!-- Horario cuadro -->
+    <div class="horario-box">
+      <div class="horario-title">HORARIOS DE</div>
+      <div class="horario-big">SERVICIO</div>
+      <ul class="horario-list">
+        <li><span class="horario-day">Domingo</span> <span class="horario-hour">Closed</span></li>
+        <li><span class="horario-day">Lunes</span> <span class="horario-hour">8:00 a 19:00</span></li>
+        <li><span class="horario-day">Martes</span> <span class="horario-hour">8:00 a 19:00</span></li>
+        <li><span class="horario-day">Miércoles</span> <span class="horario-hour">8:00 a 19:00</span></li>
+        <li><span class="horario-day">Jueves</span> <span class="horario-hour">8:00 a 19:00</span></li>
+        <li><span class="horario-day">Viernes</span> <span class="horario-hour">8:00 a 19:00</span></li>
+        <li><span class="horario-day">Sábado</span> <span class="horario-hour">9:00 a 17:00</span></li>
+      </ul>
+    </div>
+    <!-- Formulario cuadro -->
+    <div class="horario-box">
       <div class="form-title">CONTÁCTANOS</div>
       <div class="form-big">FORMULARIO</div>
-      <form class="contact-form" action="enviar.php" method="POST" autocomplete="off">
+      <!-- Puedes usar action Formspree si no tienes PHP -->
+      <form class="contact-form" action="https://formspree.io/f/tuclave" method="POST" autocomplete="off">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
 
@@ -231,34 +271,3 @@
   </section>
 </body>
 </html>
-
-<?php
-// Cambia este correo por el tuyo
-$destino = "feacreformistas@gmail.com";
-$nombre = isset($_POST["nombre"]) ? $_POST["nombre"] : "";
-$email = isset($_POST["email"]) ? $_POST["email"] : "";
-$mensaje = isset($_POST["mensaje"]) ? $_POST["mensaje"] : "";
-
-// Validar campos mínimos
-if (empty($nombre) || empty($email) || empty($mensaje)) {
-    header("Location: error.html");
-    exit;
-}
-
-// Validar email
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header("Location: error.html");
-    exit;
-}
-
-$contenido = "Nombre: $nombre\nCorreo: $email\nMensaje: $mensaje";
-$headers = "From: $email\r\nReply-To: $email\r\n";
-
-// Enviar y redirigir
-if (mail($destino, "Nuevo mensaje de formulario", $contenido, $headers)) {
-    header("Location: gracias.html");
-} else {
-    header("Location: error.html");
-}
-exit;
-?>
