@@ -1,32 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dos Cuadrados Perfectos</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>FEAC Reformistas</title>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+  <link href="css/business-casual.min.css" rel="stylesheet">
   <style>
     html, body {
       height: 100%;
+      min-height: 100%;
+    }
+    body {
+      background: url('img/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      width: 100vw;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
     }
-    body {
-      min-height: 100vh;
-      width: 100vw;
+    .site-heading {
+      z-index: 2;
+      position: relative;
+    }
+    .page-section.about-heading {
+      flex: 1 0 auto;
+      min-height: 80vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #333;
+      flex-direction: column;
+      position: relative;
+    }
+    .about-heading-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      max-width: 900px;
     }
     .cuadrados-container {
       display: flex;
       gap: 2em;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       width: 100%;
-      height: 100%;
+      z-index: 2;
+      position: relative;
     }
     .cuadrado {
       background: rgba(255,255,255,0.93);
@@ -56,11 +85,13 @@
       text-align: center;
       display: block;
       margin-bottom: 0.5em;
+      font-weight: bold;
     }
     @media (max-width: 900px) {
       .cuadrados-container {
         flex-direction: column;
         gap: 1em;
+        align-items: center;
       }
     }
     @media (max-width: 450px) {
@@ -71,33 +102,78 @@
         min-height: 0;
         padding: 1em;
       }
+      .about-heading-img {
+        width: 98vw;
+        max-width: 98vw;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="cuadrados-container">
-    <div class="cuadrado">
-      <div class="ajustable">
-        <b>FEAC REFORMISTAS</b>
-        <h1>NOSOTROS</h1>
-        <p>
-          Feac Reformistas es una empresa especializada en aportar soluciones integrales en todo tipo de reformas ya sea electricidad, fontanería, carpintería (puertas, paredes móviles, armarios, vestidores, parquets, aluminio y pvc), albañilería (alicatados, tabiquería, pladur, etc.), calefacción y gas, pintura, diferentes trabajos en terrazas… <br>
-          Nuestro principal objetivo es asesorarles en todos los problemas que puedan tener en su inmueble.
-          Nuestro equipo tiene una experiencia de más de 15 años implementando todo tipo de proyectos, siempre ajustándonos a las necesidades específicas de cada cliente. Eso nos ha proporcionado una amplia experiencia que compartimos con nuestros clientes. 
-        </p>
+  <h1 class="site-heading text-center text-white d-none d-lg-block">
+    <span class="site-heading-lower">FEAC</span>
+    <span class="site-heading-upper text-primary mb-3">reformistas</span>
+  </h1>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Menu</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="servicios.html">Servicios</a>
+          </li>
+          <li class="nav-item active px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="cuadrado">
-      <div class="ajustable">
-        <b>FEAC REFORMISTAS</b>
-        <h1>VALORES</h1>
-        <p>
-          - Nuestro elemento más DIFERENCIADOR es el TRATO PERSONALIZADO ya que analizamos las necesidades de cada cliente con el objetivo de encontrar una solución integral. <br>
-          - Disponemos de un equipo de profesionales cualificados, expertos en construcción. Le garantizamos resultados de calidad. El servicio que ofrecemos a nuestros clientes nos avala. <br>
-          - COMPROMISO Y EFICACIA, nos esforzamos por convertir a cada cliente en un compromiso profesional. Y le brindamos una respuesta efectiva a cualquier duda o incidencia.
-        </p>
+  </nav>
+  <section class="page-section about-heading">
+    <!-- Imagen banner decorativa, cambia la ruta si tu imagen está en otro lado -->
+    <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about-bg.jpg" alt="Decorativo">
+    <div class="cuadrados-container">
+      <div class="cuadrado">
+        <div class="ajustable">
+          <b>FEAC REFORMISTAS</b>
+          <h1>NOSOTROS</h1>
+          <p>
+            Feac Reformistas es una empresa especializada en aportar soluciones integrales en todo tipo de reformas ya sea electricidad, fontanería, carpintería (puertas, paredes móviles, armarios, vestidores, parquets, aluminio y pvc), albañilería (alicatados, tabiquería, pladur, etc.), calefacción y gas, pintura, diferentes trabajos en terrazas… <br>
+            Nuestro principal objetivo es asesorarles en todos los problemas que puedan tener en su inmueble.
+            Nuestro equipo tiene una experiencia de más de 15 años implementando todo tipo de proyectos, siempre ajustándonos a las necesidades específicas de cada cliente. Eso nos ha proporcionado una amplia experiencia que compartimos con nuestros clientes. 
+          </p>
+        </div>
+      </div>
+      <div class="cuadrado">
+        <div class="ajustable">
+          <b>VALORES</b>
+          <h1>POR QUÉ ELEGIRNOS</h1>
+          <p>
+            - Nuestro elemento más DIFERENCIADOR es el TRATO PERSONALIZADO ya que analizamos las necesidades de cada cliente con el objetivo de encontrar una solución integral. <br>
+            - Disponemos de un equipo de profesionales cualificados, expertos en construcción. Le garantizamos resultados de calidad. El servicio que ofrecemos a nuestros clientes nos avala. <br>
+            - COMPROMISO Y EFICACIA, nos esforzamos por convertir a cada cliente en un compromiso profesional. Y le brindamos una respuesta efectiva a cualquier duda o incidencia.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+  <footer class="footer text-faded text-center py-5">
+    <div class="container">
+      <p class="m-0 small">Copyright &copy; FEAC Reformistas 2018</p>
+    </div>
+  </footer>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
