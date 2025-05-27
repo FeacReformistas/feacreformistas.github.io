@@ -12,7 +12,8 @@
       margin: 0;
       font-family: 'Raleway', Arial, sans-serif;
     }
-    /* Logo FEAC centrado */
+
+    /* LOGO FEAC CENTRADO */
     .logo-feac-container {
       display: flex;
       flex-direction: column;
@@ -24,11 +25,11 @@
       margin-bottom: 0;
     }
     .logo-feac {
-      background: rgba(0,0,0,0.40);
-      border-radius: 18px;
-      padding: 30px 48px 22px 48px;
+      background: none;
+      border-radius: 0;
+      padding: 0;
       margin-bottom: 0;
-      box-shadow: 0 6px 32px rgba(0,0,0,0.16);
+      box-shadow: none;
       text-align: center;
     }
     .logo-feac .feac {
@@ -51,6 +52,7 @@
       margin-top: 12px;
       text-shadow: 1px 2px 8px #000, 0 1px 7px #25508c33;
     }
+
     /* MENÚ AZUL */
     .custom-navbar {
       display: flex;
@@ -98,6 +100,7 @@
       color: #bcd9fa;
       text-decoration: underline;
     }
+
     /* HERO: cuadro blanco a la izquierda, foto a la derecha */
     .hero-outer {
       width: 100vw;
@@ -194,6 +197,48 @@
       object-fit: cover;
       display: block;
     }
+
+    /* SECCION SERVICIOS CENTRAL */
+    .servicios-section {
+      background: #5B7FC1;
+      width: 100vw;
+      padding: 60px 0 70px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .servicios-container {
+      background: #f3f6fb;
+      border: 3px solid #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 0 2px #3b4e6e;
+      padding: 38px 48px 32px 48px;
+      max-width: 820px;
+      width: 90vw;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .servicios-container h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #232323;
+      margin: 0 0 8px 0;
+      letter-spacing: 1px;
+    }
+    .servicios-container h2 {
+      font-size: 2.5rem;
+      font-weight: 100;
+      color: #5B7FC1;
+      margin: 0 0 24px 0;
+      letter-spacing: 2px;
+    }
+    .servicios-container p {
+      color: #232323;
+      font-size: 1.12rem;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 1100px) {
       .logo-feac-container { min-height: 90px;}
@@ -208,6 +253,9 @@
       .glass-box { margin-bottom: 0; }
       .hero-img-wrap { border-radius: 0 0 18px 18px; }
       .hero-img { min-height: 180px; }
+      .servicios-container {
+        padding: 16px 8vw 14px 8vw;
+      }
     }
     @media (max-width: 700px) {
       .logo-feac-container { min-height: 70px;}
@@ -219,6 +267,12 @@
       .hero-img-wrap { border-radius: 0 0 18px 18px; }
       .hero-img { min-height: 120px; }
       .custom-navbar { width: 100vw;}
+      .servicios-section {
+        padding: 36px 0 36px 0;
+      }
+      .servicios-container h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -256,5 +310,15 @@
       </div>
     </div>
   </div>
+  <!-- Sección azul de servicios -->
+  <section class="servicios-section">
+    <div class="servicios-container">
+      <h3>SERVICIOS</h3>
+      <h2>24 HORAS</h2>
+      <p>
+        Feac Reformistas es una empresa especializada en aportar soluciones integrales en todo tipo de reformas ya sea electricidad, fontanería, carpintería (puertas, paredes móviles, armarios, vestidores, parquets, aluminio y pvc), albañilería (alicatados, tabiquería, pladur, etc.), calefacción y gas, pintura, diferentes trabajos en terrazas.
+      </p>
+    </div>
+  </section>
 </body>
 </html>
