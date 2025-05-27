@@ -202,3 +202,33 @@
   </section>
 </body>
 </html>
+
+<form action="enviar.php" method="POST" style="max-width:400px;margin:auto;">
+  <label for="nombre">Nombre:</label><br>
+  <input type="text" id="nombre" name="nombre" required><br><br>
+
+  <label for="email">Correo electrónico:</label><br>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <label for="mensaje">Mensaje:</label><br>
+  <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br><br>
+
+  <button type="submit">Enviar</button>
+</form>
+
+<?php
+// Cambia este correo por el tuyo
+$destino = "tucorreo@tudominio.com";
+$nombre = $_POST["nombre"];
+$email = $_POST["email"];
+$mensaje = $_POST["mensaje"];
+
+$contenido = "Nombre: $nombre\nCorreo: $email\nMensaje: $mensaje";
+
+$headers = "From: $email\r\nReply-To: $email\r\n";
+
+mail($destino, "Nuevo mensaje de formulario", $contenido, $headers);
+
+header("Location: gracias.html");
+exit;
+?>
