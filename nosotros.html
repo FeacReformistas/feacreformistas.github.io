@@ -35,20 +35,21 @@
       opacity: 1;
       text-decoration: underline;
     }
+    /* Imagen de rodillo centrada */
     .banner-img-container {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100vw;
       margin-top: 2.5rem;
-      margin-bottom: -100px; /* superpone el cuadro */
+      margin-bottom: -60px; /* solapa un poco los cuadros */
       position: relative;
       z-index: 2;
       pointer-events: none;
     }
     .banner-img-container img {
       width: 700px;
-      max-width: 95vw;
+      max-width: 94vw;
       height: auto;
       border-radius: 8px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.15);
@@ -56,34 +57,34 @@
     }
     .cuadrados-container {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
+      gap: 2em;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
       z-index: 3;
+      position: relative;
+      margin-top: 0;
     }
     .cuadrado {
       background: rgba(255,255,255,0.96);
-      width: 800px;
-      max-width: 96vw;
+      width: 400px;
       border-radius: 10px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.20);
-      padding: 2.5em 2em 2em 2em;
-      margin-top: 0;
-      margin-bottom: 2em;
-      position: relative;
+      padding: 2em 1.3em;
+      margin: 1em 0.5em 2em 0.5em;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      min-height: 200px;
+      max-width: 95vw;
+      overflow: hidden;
     }
     .ajustable h1, .ajustable b {
-      text-align: left;
+      text-align: center;
       display: block;
       margin-bottom: 0.5em;
       font-weight: bold;
-    }
-    .ajustable h1 {
-      font-size: 2.6rem;
-      font-family: 'Raleway', Arial, sans-serif;
-      letter-spacing: 2px;
-      font-weight: 200;
-      margin-bottom: 1.2em;
     }
     .ajustable p {
       text-align: justify;
@@ -92,12 +93,18 @@
       font-family: 'Lora', serif;
     }
     @media (max-width: 900px) {
-      .banner-img-container img,
-      .cuadrado {
+      .banner-img-container img {
         width: 98vw;
         max-width: 98vw;
       }
+      .cuadrados-container {
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+      }
       .cuadrado {
+        width: 98vw;
+        max-width: 98vw;
         padding: 1.2em 0.6em 1.2em 0.6em;
       }
     }
@@ -135,7 +142,7 @@
     <img src="img/rodillo.jpg" alt="Rodillo de pintura">
   </div>
 
-  <!-- Cuadro de texto centrado -->
+  <!-- Cuadros de contenido -->
   <div class="cuadrados-container">
     <div class="cuadrado">
       <div class="ajustable">
@@ -143,6 +150,17 @@
         <h1>NOSOTROS</h1>
         <p>
           Nuestro principal objetivo es asesorarles en todos los problemas que puedan tener en su inmueble. Nuestro equipo tiene una experiencia de más de 15 años implementando todo tipo de proyectos, siempre ajustándonos a las necesidades específicas de cada cliente. Eso nos ha proporcionado una amplia experiencia que compartimos con nuestros clientes.
+        </p>
+      </div>
+    </div>
+    <div class="cuadrado">
+      <div class="ajustable">
+        <b>VALORES</b>
+        <h1>POR QUÉ ELEGIRNOS</h1>
+        <p>
+          - Nuestro elemento más DIFERENCIADOR es el TRATO PERSONALIZADO, ya que analizamos las necesidades de cada cliente con el objetivo de encontrar una solución integral.<br>
+          - Disponemos de un equipo de profesionales cualificados, expertos en construcción. Le garantizamos resultados de calidad. El servicio que ofrecemos a nuestros clientes nos avala.<br>
+          - COMPROMISO Y EFICACIA, nos esforzamos por convertir a cada cliente en un compromiso profesional y le brindamos una respuesta efectiva a cualquier duda o incidencia.
         </p>
       </div>
     </div>
