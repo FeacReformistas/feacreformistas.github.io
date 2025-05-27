@@ -122,6 +122,7 @@
       align-items: stretch;
       padding: 1.3em;
       margin: 0.5em 0;
+      overflow: hidden;
     }
     .ajustable {
       width: 100%;
@@ -131,7 +132,6 @@
       justify-content: flex-start;
       align-items: stretch;
       font-size: clamp(10px, 2vw, 18px);
-      overflow: hidden;
       word-break: break-word;
     }
     .ajustable h1, .ajustable b {
@@ -139,6 +139,13 @@
       display: block;
       margin-bottom: 0.5em;
       font-weight: bold;
+    }
+    .ajustable p {
+      flex: 1 1 auto;
+      text-align: justify;
+      margin-bottom: 0;
+      margin-top: 0;
+      /* Opcional: agregar padding si quieres más aire */
     }
     @media (max-width: 900px) {
       .cuadrados-container {
@@ -200,9 +207,7 @@
           <b>FEAC REFORMISTAS</b>
           <h1>NOSOTROS</h1>
           <p>
-            Nuestro principal objetivo es asesorarles en todos los problemas que puedan tener en su inmueble.
-            Nuestro equipo tiene una experiencia de más de 15 años implementando todo tipo de proyectos, siempre ajustándonos a las necesidades específicas de cada cliente. 
-            Eso nos ha proporcionado una amplia experiencia que compartimos con nuestros clientes. 
+            Nuestro principal objetivo es asesorarles en todos los problemas que puedan tener en su inmueble. Nuestro equipo tiene una experiencia de más de 15 años implementando todo tipo de proyectos, siempre ajustándonos a las necesidades específicas de cada cliente. Eso nos ha proporcionado una amplia experiencia que compartimos con nuestros clientes.
           </p>
         </div>
       </div>
@@ -211,9 +216,9 @@
           <b>VALORES</b>
           <h1>POR QUÉ ELEGIRNOS</h1>
           <p>
-            - Nuestro elemento más DIFERENCIADOR es el TRATO PERSONALIZADO ya que analizamos las necesidades de cada cliente con el objetivo de encontrar una solución integral. <br>
-            - Disponemos de un equipo de profesionales cualificados, expertos en construcción. Le garantizamos resultados de calidad. El servicio que ofrecemos a nuestros clientes nos avala. <br>
-            - COMPROMISO Y EFICACIA, nos esforzamos por convertir a cada cliente en un compromiso profesional. Y le brindamos una respuesta efectiva a cualquier duda o incidencia.
+            - Nuestro elemento más DIFERENCIADOR es el TRATO PERSONALIZADO, ya que analizamos las necesidades de cada cliente con el objetivo de encontrar una solución integral.<br>
+            - Disponemos de un equipo de profesionales cualificados, expertos en construcción. Le garantizamos resultados de calidad. El servicio que ofrecemos a nuestros clientes nos avala.<br>
+            - COMPROMISO Y EFICACIA, nos esforzamos por convertir a cada cliente en un compromiso profesional y le brindamos una respuesta efectiva a cualquier duda o incidencia.
           </p>
         </div>
       </div>
