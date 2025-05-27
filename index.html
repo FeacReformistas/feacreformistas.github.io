@@ -17,26 +17,31 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 70vh;
+      min-height: 75vh;
       width: 100vw;
       padding: 60px 0 40px 0;
+      position: relative;
+      z-index: 1;
     }
     .hero-inner {
       position: relative;
-      width: 900px;
+      width: 920px;
       max-width: 98vw;
-      height: 430px;
+      height: 440px;
       display: flex;
-      align-items: stretch;
+      align-items: center;
       justify-content: flex-start;
+      z-index: 2;
     }
     .hero-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 9px;
+      border-radius: 12px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.19);
       display: block;
+      position: relative;
+      z-index: 2;
     }
     .glass-box {
       position: absolute;
@@ -46,14 +51,14 @@
       max-width: 96vw;
       height: 100%;
       background: rgba(255,255,255,0.89);
-      border-radius: 9px 0 0 9px;
+      border-radius: 12px 0 0 12px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.11);
       padding: 40px 36px 28px 36px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       font-family: 'Lora', serif;
-      z-index: 2;
+      z-index: 3;
       backdrop-filter: blur(2px);
       align-items: flex-start;
     }
@@ -109,69 +114,8 @@
       .glass-box {
         position: static;
         width: 98vw;
-        border-radius: 9px 9px 0 0;
+        border-radius: 12px 12px 0 0;
         height: auto;
         min-width: unset;
         margin-bottom: -6px;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.09);
-        align-items: flex-start;
-      }
-      .hero-img {
-        border-radius: 0 0 9px 9px;
-        height: 190px;
-        min-height: 90px;
-      }
-    }
-    /* Sección de servicios separada, fondo blanco */
-    .servicios-section {
-      background: #f8f9fa;
-      margin-top: 0;
-      padding: 36px 0 20px 0;
-      min-height: 220px;
-      border-top: 2px solid #e0e3eb;
-    }
-  </style>
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background:#25508C;">
-    <a class="navbar-brand" href="#">FEAC Reformistas</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active"><a class="nav-link" href="#">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
-        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="hero-outer">
-    <div class="hero-inner">
-      <img src="img/hero.jpg" alt="Trabajadores FEAC Reformistas" class="hero-img">
-      <div class="glass-box">
-        <h2>SERVICIOS 24 HORAS</h2>
-        <h1>FEAC REFORMISTAS</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla dignissim facilisis. Phasellus nec vulputate nulla. Aenean euismod lectus ac massa vehicula, ac venenatis eros posuere. Curabitur in aliquam erat, in eleifend nisl. Nullam pellentesque facilisis eros, vel feugiat nisi rutrum a. Phasellus neque ligula, efficitur id egestas eget, rhoncus vel mauris. Praesent sit amet nisi vitae velit congue tempus.
-        </p>
-        <a href="contacto.html" class="btn btn-feac">Contáctanos</a>
-      </div>
-    </div>
-  </div>
-
-  <section class="servicios-section">
-    <div class="container">
-      <h2>SERVICIOS</h2>
-      <p>Feac Reformistas es una empresa especializada en aportar soluciones integrales en todo tipo de reformas ya sea electricidad, fontanería, carpintería (puertas, paredes móviles, armarios, vestidores, parquets, aluminio y pvc), albañilería (alicatados, tabiquería, pladur, etc.), calefacción y gas, pintura, diferentes trabajos en terrazas…</p>
-    </div>
-  </section>
-  <footer class="bg-dark text-white text-center py-4">
-    <p>&copy; 2025 FEAC Reformistas. Todos los derechos reservados.</p>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+        box
