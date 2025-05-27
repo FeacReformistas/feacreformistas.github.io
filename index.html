@@ -73,8 +73,8 @@
       text-decoration: underline;
     }
 
-    /* Intro (foto y cuadro) */
-    .intro-outer {
+    /* Hero (foto y cuadro) */
+    .hero-outer {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -83,7 +83,7 @@
       margin-top: 52px;
       margin-bottom: 32px;
     }
-    .intro-inner {
+    .hero-inner {
       position: relative;
       width: 900px;
       max-width: 98vw;
@@ -92,7 +92,7 @@
       align-items: center;
       justify-content: center;
     }
-    .intro-img {
+    .hero-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -109,7 +109,7 @@
       width: 410px;
       max-width: 96vw;
       height: 100%;
-      background: rgba(255,255,255,0.91);
+      background: rgba(255,255,255,0.96); /* Más opaco para mejor lectura */
       border-radius: 14px 0 0 14px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.13);
       padding: 38px 38px 32px 38px;
@@ -162,14 +162,14 @@
       color: #fff;
     }
     @media (max-width: 1000px) {
-      .intro-inner { width: 99vw; height: 260px; }
+      .hero-inner { width: 99vw; height: 260px; }
       .glass-box { width: 60vw; min-width: 210px; padding: 18px 10px 14px 10px;}
       .custom-navbar { width: 98vw;}
     }
     @media (max-width: 700px) {
       .logo-feac { margin-top: 24px; margin-bottom: 18px;}
-      .intro-outer { margin-top: 26px;}
-      .intro-inner { flex-direction: column; height: auto; min-height: unset; }
+      .hero-outer { margin-top: 26px;}
+      .hero-inner { flex-direction: column; height: auto; min-height: unset; }
       .glass-box {
         position: static;
         width: 98vw;
@@ -180,7 +180,7 @@
         box-shadow: 0 4px 14px rgba(0,0,0,0.09);
         align-items: flex-start;
       }
-      .intro-img {
+      .hero-img {
         border-radius: 0 0 14px 14px;
         height: 140px;
         min-height: 90px;
@@ -208,7 +208,7 @@
   <!-- Hero sección: foto obreros centrada con cuadro -->
   <div class="hero-outer">
     <div class="hero-inner">
-      <img src="img/intro.jpg" alt="Trabajadores FEAC Reformistas" class="hero-img">
+      <img src="img/hero.jpg" alt="Trabajadores FEAC Reformistas" class="hero-img">
       <div class="glass-box">
         <h2>SERVICIOS 24 HORAS</h2>
         <h1>FEAC REFORMISTAS</h1>
@@ -220,7 +220,5 @@
       </div>
     </div>
   </div>
-
-  <!-- Puedes agregar más contenido abajo si quieres -->
 </body>
 </html>
