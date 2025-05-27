@@ -9,9 +9,9 @@
     body {
       background: url('img/bg.jpg') no-repeat center center fixed;
       background-size: cover;
-      min-height: 100vh;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
     }
     .feac-navbar {
       background: #25508C;
@@ -33,68 +33,71 @@
       opacity: 1;
       text-decoration: underline;
     }
-    .about-heading-img {
-      width: 100%;
-      max-width: 900px;
-      margin: 2rem auto;
-      display: block;
-      border-radius: 0.5rem;
+    /* Imagen grande encima del cuadro */
+    .banner-img-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      margin-top: 2rem;
+      margin-bottom: -100px; /* Se solapa con el cuadro */
+      position: relative;
+      z-index: 2;
+      pointer-events: none; /* Para que la imagen no interrumpa scroll o selección */
+    }
+    .banner-img-container img {
+      width: 600px;
+      max-width: 90vw;
+      height: auto;
+      border-radius: 8px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      display: block;
     }
     .cuadrados-container {
       display: flex;
-      gap: 2em;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 3;
     }
     .cuadrado {
-      background: rgba(255,255,255,0.93);
-      width: 400px;
-      /* Elimina la altura fija:
-      height: 400px; */
+      background: rgba(255,255,255,0.96);
+      width: 800px;
+      max-width: 96vw;
       border-radius: 10px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.20);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: stretch;
-      padding: 1.3em;
-      margin: 0.5em 0;
-      overflow: hidden;
-      min-height: 120px;
-      /* min-height solo para que no colapse si hay poco texto */
-    }
-    .ajustable {
-      display: flex;
-      flex-direction: column;
-      flex: 1 1 auto;
-      justify-content: flex-start;
-      align-items: stretch;
-      width: 100%;
+      padding: 2.5em 2em 2em 2em;
+      margin-top: 0;
+      margin-bottom: 2em;
+      position: relative;
     }
     .ajustable h1, .ajustable b {
-      text-align: center;
+      text-align: left;
+      display: block;
       margin-bottom: 0.5em;
       font-weight: bold;
+    }
+    .ajustable h1 {
+      font-size: 2.6rem;
+      font-family: 'Raleway', Arial, sans-serif;
+      letter-spacing: 2px;
+      font-weight: 200;
+      margin-bottom: 1.2em;
     }
     .ajustable p {
       text-align: justify;
       margin: 0;
-      padding-top: 0.5em;
-      padding-bottom: 0.5em;
+      font-size: 1.1rem;
+      font-family: 'Lora', serif;
     }
     @media (max-width: 900px) {
-      .cuadrados-container {
-        flex-direction: column;
-        gap: 1em;
-        align-items: center;
-      }
+      .banner-img-container img,
       .cuadrado {
         width: 98vw;
-        min-width: 0;
-        padding: 1em;
+        max-width: 98vw;
+      }
+      .cuadrado {
+        padding: 1.2em 0.6em 1.2em 0.6em;
       }
     }
   </style>
@@ -125,26 +128,20 @@
       </div>
     </div>
   </nav>
-  <img class="about-heading-img" src="img/about-bg.jpg" alt="Decorativo">
+
+  <!-- Imagen decorativa centrada -->
+  <div class="banner-img-container">
+    <img src="img/about-bg.jpg" alt="Decorativo rodillo pintura">
+  </div>
+
+  <!-- Cuadro de texto centrado -->
   <div class="cuadrados-container">
     <div class="cuadrado">
       <div class="ajustable">
         <b>FEAC REFORMISTAS</b>
         <h1>NOSOTROS</h1>
         <p>
-          Nuestro principal objetivo es asesorarles en todos los problemas que puedan tener en su inmueble.<br>
-          Nuestro equipo tiene una experiencia de más de 15 años implementando todo tipo de proyectos, siempre ajustándonos a las necesidades específicas de cada cliente. Eso nos ha proporcionado una amplia experiencia que compartimos con nuestros clientes.<br>
-                  </p>
-      </div>
-    </div>
-    <div class="cuadrado">
-      <div class="ajustable">
-        <b>VALORES</b>
-        <h1>POR QUÉ ELEGIRNOS</h1>
-        <p>
-          - Nuestro elemento más DIFERENCIADOR es el TRATO PERSONALIZADO, ya que analizamos las necesidades de cada cliente con el objetivo de encontrar una solución integral.<br>
-          - Disponemos de un equipo de profesionales cualificados, expertos en construcción. Le garantizamos resultados de calidad. El servicio que ofrecemos a nuestros clientes nos avala.<br>
-          - COMPROMISO Y EFICACIA, nos esforzamos por convertir a cada cliente en un compromiso profesional y le brindamos una respuesta efectiva a cualquier duda o incidencia.
+          Nuestro principal objetivo es asesorarles en todos los problemas que puedan tener en su inmueble. Nuestro equipo tiene una experiencia de más de 15 años implementando todo tipo de proyectos, siempre ajustándonos a las necesidades específicas de cada cliente. Eso nos ha proporcionado una amplia experiencia que compartimos con nuestros clientes.
         </p>
       </div>
     </div>
