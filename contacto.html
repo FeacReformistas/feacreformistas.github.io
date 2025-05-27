@@ -95,8 +95,8 @@
       .custom-navbar ul { flex-direction: column; height: auto; }
       .custom-navbar a { width: 100%; display: block; padding: 1em 0; font-size: 1rem; }
     }
-    /* Cuadro horario de servicio translúcido */
-    .horario-section {
+    /* Cuadro translúcido */
+    .form-section {
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -104,8 +104,8 @@
       min-height: 60vh;
       padding: 60px 0 60px 0;
     }
-    .horario-box {
-      background: rgba(255,255,255,0.80); /* TRANSLÚCIDO */
+    .form-box {
+      background: rgba(255,255,255,0.80);
       border-radius: 18px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.22);
       border: 3px solid #25508C;
@@ -119,7 +119,7 @@
       transition: box-shadow 0.2s;
       backdrop-filter: blur(3px);
     }
-    .horario-title {
+    .form-title {
       font-family: 'Raleway', Arial, sans-serif;
       font-size: 1.15rem;
       font-weight: 700;
@@ -128,7 +128,7 @@
       text-align: center;
       margin-bottom: 0.25em;
     }
-    .horario-big {
+    .form-big {
       font-family: 'Raleway', Arial, sans-serif;
       font-weight: 100;
       font-size: 2.1rem;
@@ -137,36 +137,62 @@
       color: #25508C;
       text-align: center;
     }
-    .horario-list {
+    .contact-form {
       width: 100%;
       font-family: 'Lora', serif;
-      font-size: 1.12rem;
+      font-size: 1.1rem;
       color: #222;
       margin: 0;
       padding: 0;
-      list-style: none;
-    }
-    .horario-list li {
       display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px solid #e9e9e9;
+      flex-direction: column;
+      gap: 14px;
     }
-    .horario-list li:last-child {
-      border-bottom: none;
-    }
-    .horario-day {
+    .contact-form label {
       font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 2px;
     }
-    .horario-hour {
-      text-align: right;
-      font-weight: 400;
+    .contact-form input,
+    .contact-form textarea {
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      padding: 8px;
+      font-family: inherit;
+      width: 100%;
+      resize: none;
+      font-size: 1rem;
+      background: #f7fafd;
+      box-sizing: border-box;
+    }
+    .contact-form textarea {
+      min-height: 80px;
+      max-width: 100%;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      margin-top: 10px;
+      background: #25508C;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.08rem;
+      font-family: 'Raleway', Arial, sans-serif;
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 12px 0;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+    }
+    .contact-form button:hover {
+      background: #3870C2;
     }
     @media (max-width: 600px) {
-      .horario-box {
+      .form-box {
         padding: 16px 3vw 14px 3vw;
       }
-      .horario-big {
+      .form-big {
         font-size: 1.4rem;
       }
     }
@@ -185,50 +211,23 @@
       <li><a href="contacto.html" class="active">CONTACTO</a></li>
     </ul>
   </nav>
-  <section class="horario-section">
-    <div class="horario-box">
-      <div class="horario-title">HORARIOS DE</div>
-      <div class="horario-big">SERVICIO</div>
-      <ul class="horario-list">
-        <li><span class="horario-day">Domingo</span> <span class="horario-hour">Closed</span></li>
-        <li><span class="horario-day">Lunes</span> <span class="horario-hour">8:00 a 19:00</span></li>
-        <li><span class="horario-day">Martes</span> <span class="horario-hour">8:00 a 19:00</span></li>
-        <li><span class="horario-day">Miércoles</span> <span class="horario-hour">8:00 a 19:00</span></li>
-        <li><span class="horario-day">Jueves</span> <span class="horario-hour">8:00 a 19:00</span></li>
-        <li><span class="horario-day">Viernes</span> <span class="horario-hour">8:00 a 19:00</span></li>
-        <li><span class="horario-day">Sábado</span> <span class="horario-hour">9:00 a 17:00</span></li>
-      </ul>
+  <section class="form-section">
+    <div class="form-box">
+      <div class="form-title">CONTÁCTANOS</div>
+      <div class="form-big">FORMULARIO</div>
+      <form class="contact-form" action="enviar.php" method="POST" autocomplete="off">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
     </div>
   </section>
 </body>
 </html>
-
-<form action="enviar.php" method="POST" style="max-width:400px;margin:auto;">
-  <label for="nombre">Nombre:</label><br>
-  <input type="text" id="nombre" name="nombre" required><br><br>
-
-  <label for="email">Correo electrónico:</label><br>
-  <input type="email" id="email" name="email" required><br><br>
-
-  <label for="mensaje">Mensaje:</label><br>
-  <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br><br>
-
-  <button type="submit">Enviar</button>
-</form>
-
-<?php
-// Cambia este correo por el tuyo
-$destino = "feacreformistas@gmail.com";
-$nombre = $_POST["nombre"];
-$email = $_POST["email"];
-$mensaje = $_POST["mensaje"];
-
-$contenido = "Nombre: $nombre\nCorreo: $email\nMensaje: $mensaje";
-
-$headers = "From: $email\r\nReply-To: $email\r\n";
-
-mail($destino, "Nuevo mensaje de formulario", $contenido, $headers);
-
-header("Location: gracias.html");
-exit;
-?>
