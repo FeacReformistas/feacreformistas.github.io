@@ -20,7 +20,7 @@
       justify-content: center;
       position: relative;
       width: 100vw;
-      min-height: 70px;
+      min-height: 90px;
       margin-bottom: 0;
       background: transparent;
     }
@@ -32,7 +32,7 @@
       z-index: 2;
     }
     .header-feac .logo-container img {
-      height: 56px;
+      height: 80px; /* Logo más grande */
       display: block;
     }
     .header-feac .title-container {
@@ -256,7 +256,7 @@
 
     /* RESPONSIVE */
     @media (max-width: 1100px) {
-      .header-feac { min-height: 60px;}
+      .header-feac { min-height: 70px;}
       .hero-inner { flex-direction: column; width: 98vw; }
       .glass-box, .hero-img-wrap {
         width: 100%;
@@ -293,6 +293,9 @@
       }
       .header-feac .logo-container {
         left: 4px;
+      }
+      .header-feac .logo-container img {
+        height: 56px; /* Un poco menos en móvil */
       }
     }
   </style>
