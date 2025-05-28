@@ -1,9 +1,9 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FEAC Reformistas</title>
+  <title>FEAC Reformistas - Nosotros</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
   <style>
@@ -15,46 +15,33 @@
       padding: 0;
       font-family: 'Raleway', Arial, sans-serif;
     }
-    /* CABECERA: igual en todas las páginas */
-    .feac-navbar {
+    /* Cabecera principal */
+    .main-header {
+      width: 100vw;
       background: #25508C;
-      padding-left: 0;
-      padding-right: 0;
-      width: 100vw;
-      min-height: 110px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: none;
-    }
-    .feac-navbar-container {
-      width: 100vw;
-      max-width: 1400px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-left: 0;
-      padding-right: 0;
+      padding: 0 36px 0 18px;
+      min-height: 110px;
     }
-    .navbar-brand-feac {
+    .header-left {
       display: flex;
       align-items: center;
       gap: 18px;
-      text-decoration: none;
-      padding-left: 18px;
-      padding-right: 36px;
     }
-    .feac-logo-img {
+    .logo-img {
       height: 90px;
       width: auto;
       display: block;
     }
-    .feac-title-block {
+    .logo-title {
       display: flex;
       flex-direction: column;
       line-height: 1;
+      justify-content: center;
     }
-    .feac-title-block .feac {
+    .logo-title .feac {
       font-family: 'Raleway', Arial, sans-serif;
       font-size: 2.1rem;
       font-weight: 100;
@@ -62,7 +49,7 @@
       color: #fff;
       text-shadow: 2px 3px 12px #000, 0 2px 8px #25508c44;
     }
-    .feac-title-block .reformistas {
+    .logo-title .reformistas {
       font-family: 'Raleway', Arial, sans-serif;
       font-size: 1.1rem;
       font-weight: bold;
@@ -70,54 +57,43 @@
       color: #3d81e0;
       text-shadow: 1px 2px 8px #000, 0 1px 7px #25508c33;
     }
-    .feac-menu {
+    .header-nav {
       display: flex;
       align-items: center;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      gap: 32px;
     }
-    .feac-menu li {
-      margin: 0;
-      padding: 0;
-    }
-    .feac-menu a {
-      display: inline-block;
+    .header-nav a {
       color: #fff;
       font-family: 'Raleway', Arial, sans-serif;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 1px;
-      padding: 0.7em 1.7em;
-      font-size: 1.15rem;
-      opacity: 0.93;
+      font-size: 1.13rem;
       text-decoration: none;
-      transition: opacity 0.2s, color 0.2s;
-      border: none;
-      background: none;
+      opacity: 0.93;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      transition: opacity 0.2s, border-bottom 0.2s;
     }
-    .feac-menu a.active,
-    .feac-menu a:hover,
-    .feac-menu a:focus {
+    .header-nav a.active,
+    .header-nav a:hover,
+    .header-nav a:focus {
       opacity: 1;
-      text-decoration: underline;
+      border-bottom: 2px solid #fff;
     }
-    .feac-menu a.disabled {
-      opacity: 0.4;
-      pointer-events: none;
-      cursor: default;
+    @media (max-width: 900px) {
+      .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 8px;
+        min-height: unset;
+      }
+      .header-left { padding-top: 8px; }
+      .logo-img { height: 60px; }
+      .header-nav { gap: 12px; width: 100%; justify-content: center; padding-bottom: 6px; }
+      .header-nav a { font-size: 1rem; }
     }
-    @media (max-width: 1100px) {
-      .feac-navbar-container { flex-direction: column; align-items: flex-start; }
-      .navbar-brand-feac { padding-bottom: 0.5em; }
-      .feac-menu { width: 100vw; justify-content: center; }
-      .feac-menu a { font-size: 1rem; padding: 1em 1.2em; }
-      .feac-logo-img { height: 60px; }
-      .feac-title-block .feac { font-size: 1.4rem; }
-      .feac-title-block .reformistas { font-size: 0.9rem; }
-    }
-    /* CONTENIDO */
+    /* Banner imagen rodillo */
     .banner-img-container {
       display: flex;
       justify-content: center;
@@ -136,6 +112,7 @@
       box-shadow: 0 8px 32px rgba(0,0,0,0.15);
       display: block;
     }
+    /* Contenido tarjetas */
     .cuadrados-container {
       display: flex;
       gap: 2em;
@@ -178,27 +155,34 @@
       .cuadrados-container { flex-direction: column; gap: 1em; align-items: center; }
       .cuadrado { width: 98vw; max-width: 98vw; padding: 1.2em 0.6em 1.2em 0.6em; }
     }
+    footer {
+      margin-top: 2em;
+      color: #222;
+      text-align: center;
+      font-size: 0.95em;
+      background: none;
+      box-shadow: none;
+    }
   </style>
 </head>
 <body>
-  <!-- Cabecera igual que en el resto de páginas -->
-  <div class="feac-navbar">
-    <div class="feac-navbar-container">
-      <a class="navbar-brand-feac" href="index.html">
-        <img src="img/feac logo.png" alt="Logo FEAC Reformistas" class="feac-logo-img">
-        <span class="feac-title-block">
-          <span class="feac">FEAC</span>
-          <span class="reformistas">REFORMISTAS</span>
-        </span>
-      </a>
-      <ul class="feac-menu">
-        <li><a href="index.html">INICIO</a></li>
-        <li><a href="servicios.html">SERVICIOS</a></li>
-        <li><a href="nosotros.html" class="active">NOSOTROS</a></li>
-        <li><a href="contacto.html">CONTACTO</a></li>
-      </ul>
+  <!-- Cabecera igual en todas las páginas -->
+  <header class="main-header">
+    <div class="header-left">
+      <img src="img/feac logo.png" alt="Logo FEAC Reformistas" class="logo-img">
+      <div class="logo-title">
+        <span class="feac">FEAC</span>
+        <span class="reformistas">REFORMISTAS</span>
+      </div>
     </div>
-  </div>
+    <nav class="header-nav">
+      <a href="index.html">INICIO</a>
+      <a href="servicios.html">SERVICIOS</a>
+      <a href="nosotros.html" class="active">NOSOTROS</a>
+      <a href="contacto.html">CONTACTO</a>
+    </nav>
+  </header>
+
   <!-- Imagen de rodillo centrada -->
   <div class="banner-img-container">
     <img src="img/rodillo.jpg" alt="Rodillo de pintura">
@@ -226,10 +210,8 @@
       </div>
     </div>
   </div>
-  <footer class="footer text-faded text-center py-5">
-    <div class="container">
-      <p class="m-0 small">&copy; FEAC Reformistas 2018</p>
-    </div>
+  <footer>
+    &copy; FEAC Reformistas 2018
   </footer>
 </body>
 </html>
