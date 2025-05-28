@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -15,87 +15,74 @@
       padding: 0;
       font-family: 'Raleway', Arial, sans-serif;
     }
-    /* CABECERA estilo igual en todas las páginas */
-    .header-feac {
+    /* CABECERA: igual en todas las páginas */
+    .feac-navbar {
+      background: #25508C;
+      padding-left: 0;
+      padding-right: 0;
+      width: 100vw;
+      min-height: 110px;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
+      border: none;
+    }
+    .feac-navbar-container {
       width: 100vw;
-      min-height: 120px;
-      margin-bottom: 0;
-      background: #25508C;
+      max-width: 1400px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 0;
+      padding-right: 0;
     }
-    .header-feac .logo-container {
-      position: absolute;
-      left: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 2;
+    .navbar-brand-feac {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      text-decoration: none;
+      padding-left: 18px;
+      padding-right: 36px;
     }
-    .header-feac .logo-container img {
-      height: 110px;
+    .feac-logo-img {
+      height: 90px;
+      width: auto;
       display: block;
     }
-    .header-feac .title-container {
-      text-align: center;
-      z-index: 1;
+    .feac-title-block {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
     }
-    .logo-feac {
-      background: none;
-      border-radius: 0;
-      padding: 0;
-      margin-bottom: 0;
-      box-shadow: none;
-      text-align: center;
-    }
-    .logo-feac .feac {
+    .feac-title-block .feac {
       font-family: 'Raleway', Arial, sans-serif;
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       font-weight: 100;
       letter-spacing: 7px;
       color: #fff;
       text-shadow: 2px 3px 12px #000, 0 2px 8px #25508c44;
-      line-height: 1.1;
-      display: block;
     }
-    .logo-feac .reformistas {
+    .feac-title-block .reformistas {
       font-family: 'Raleway', Arial, sans-serif;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: bold;
       letter-spacing: 3px;
       color: #3d81e0;
-      display: block;
-      margin-top: 4px;
       text-shadow: 1px 2px 8px #000, 0 1px 7px #25508c33;
     }
-    .custom-navbar {
-      width: 100vw;
-      background: #25508C;
-      min-height: 64px;
+    .feac-menu {
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin: 0;
-      padding: 0;
-      border: none;
-    }
-    .custom-navbar ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      height: 100%;
       margin: 0;
       padding: 0;
       list-style: none;
-      width: 100%;
-      max-width: 950px;
-      height: 64px;
     }
-    .custom-navbar li {
-      flex: 1 1 0;
-      text-align: center;
+    .feac-menu li {
+      margin: 0;
+      padding: 0;
     }
-    .custom-navbar a {
+    .feac-menu a {
       display: inline-block;
       color: #fff;
       font-family: 'Raleway', Arial, sans-serif;
@@ -110,21 +97,25 @@
       border: none;
       background: none;
     }
-    .custom-navbar a.active,
-    .custom-navbar a:hover,
-    .custom-navbar a:focus {
+    .feac-menu a.active,
+    .feac-menu a:hover,
+    .feac-menu a:focus {
       opacity: 1;
       text-decoration: underline;
     }
-    .custom-navbar a.disabled {
+    .feac-menu a.disabled {
       opacity: 0.4;
       pointer-events: none;
       cursor: default;
     }
-    @media (max-width: 900px) {
-      .header-feac .logo-container img { height: 60px; }
-      .custom-navbar ul { flex-direction: column; height: auto; }
-      .custom-navbar a { width: 100%; display: block; padding: 1em 0; font-size: 1rem; }
+    @media (max-width: 1100px) {
+      .feac-navbar-container { flex-direction: column; align-items: flex-start; }
+      .navbar-brand-feac { padding-bottom: 0.5em; }
+      .feac-menu { width: 100vw; justify-content: center; }
+      .feac-menu a { font-size: 1rem; padding: 1em 1.2em; }
+      .feac-logo-img { height: 60px; }
+      .feac-title-block .feac { font-size: 1.4rem; }
+      .feac-title-block .reformistas { font-size: 0.9rem; }
     }
     /* CONTENIDO */
     .banner-img-container {
@@ -190,26 +181,24 @@
   </style>
 </head>
 <body>
-  <!-- Cabecera unificada -->
-  <div class="header-feac">
-    <div class="logo-container">
-      <img src="img/feac logo.png" alt="Logo FEAC Reformistas">
-    </div>
-    <div class="title-container">
-      <div class="logo-feac">
-        <span class="feac">FEAC</span>
-        <span class="reformistas">REFORMISTAS</span>
-      </div>
+  <!-- Cabecera igual que en el resto de páginas -->
+  <div class="feac-navbar">
+    <div class="feac-navbar-container">
+      <a class="navbar-brand-feac" href="index.html">
+        <img src="img/feac logo.png" alt="Logo FEAC Reformistas" class="feac-logo-img">
+        <span class="feac-title-block">
+          <span class="feac">FEAC</span>
+          <span class="reformistas">REFORMISTAS</span>
+        </span>
+      </a>
+      <ul class="feac-menu">
+        <li><a href="index.html">INICIO</a></li>
+        <li><a href="servicios.html">SERVICIOS</a></li>
+        <li><a href="nosotros.html" class="active">NOSOTROS</a></li>
+        <li><a href="contacto.html">CONTACTO</a></li>
+      </ul>
     </div>
   </div>
-  <nav class="custom-navbar">
-    <ul>
-      <li><a href="index.html">INICIO</a></li>
-      <li><a href="servicios.html">SERVICIOS</a></li>
-      <li><a href="nosotros.html" class="active">NOSOTROS</a></li>
-      <li><a href="contacto.html">CONTACTO</a></li>
-    </ul>
-  </nav>
   <!-- Imagen de rodillo centrada -->
   <div class="banner-img-container">
     <img src="img/rodillo.jpg" alt="Rodillo de pintura">
