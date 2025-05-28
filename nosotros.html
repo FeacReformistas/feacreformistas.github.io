@@ -15,6 +15,31 @@
       margin: 0;
       padding: 0;
     }
+    .feac-title-main {
+      width: 100vw;
+      text-align: center;
+      padding-top: 38px;
+      padding-bottom: 18px;
+      background: transparent;
+    }
+    .feac-title-main .feac {
+      font-family: 'Raleway', Arial, sans-serif;
+      font-size: 2.8rem;
+      font-weight: 100;
+      letter-spacing: 7px;
+      color: #222;
+      text-shadow: 2px 3px 12px #fff, 0 2px 8px #25508c44;
+      line-height: 1.1;
+      display: inline-block;
+    }
+    .feac-title-main .reformistas {
+      color: #3d81e0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-left: 8px;
+      text-shadow: 1px 2px 8px #fff, 0 1px 7px #25508c33;
+    }
     .feac-navbar {
       background: #25508C;
       padding-left: 0;
@@ -104,37 +129,26 @@
       font-family: 'Lora', serif;
     }
     @media (max-width: 900px) {
-      .banner-img-container img {
-        width: 98vw;
-        max-width: 98vw;
-      }
-      .cuadrados-container {
-        flex-direction: column;
-        gap: 1em;
-        align-items: center;
-      }
-      .cuadrado {
-        width: 98vw;
-        max-width: 98vw;
-        padding: 1.2em 0.6em 1.2em 0.6em;
-      }
-      .feac-logo-img {
-        height: 48px;
-        margin-right: 8px;
-      }
-      .feac-navbar .navbar-brand {
-        padding-right: 12px;
-      }
+      .feac-title-main .feac { font-size: 2.1rem; }
+      .feac-logo-img { height: 48px; margin-right: 8px; }
+      .feac-navbar .navbar-brand { padding-right: 12px; }
+      .banner-img-container img { width: 98vw; max-width: 98vw; }
+      .cuadrados-container { flex-direction: column; gap: 1em; align-items: center; }
+      .cuadrado { width: 98vw; max-width: 98vw; padding: 1.2em 0.6em 1.2em 0.6em; }
     }
   </style>
 </head>
 <body>
+  <!-- TÍTULO CENTRADO Y UNIFICADO -->
+  <div class="feac-title-main">
+    <span class="feac">FEAC</span>
+    <span class="reformistas">REFORMISTAS</span>
+  </div>
   <!-- Barra de navegación con logo -->
   <nav class="navbar feac-navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid px-0">
       <a class="navbar-brand" href="index.html">
         <img src="img/feac logo.png" alt="Logo FEAC Reformistas" class="feac-logo-img">
-        <!-- Puedes poner aquí el texto si quieres, por ejemplo: <span style="color:#fff;font-weight:900;font-size:1.6rem;">FEAC</span> -->
       </a>
       <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
