@@ -17,6 +17,19 @@
     }
     .feac-navbar {
       background: #25508C;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .feac-navbar .navbar-brand {
+      padding-left: 18px;
+      padding-right: 36px;
+      display: flex;
+      align-items: center;
+    }
+    .feac-logo-img {
+      height: 72px;
+      width: auto;
+      margin-right: 14px;
     }
     .feac-navbar .nav-link {
       color: #fff !important;
@@ -105,13 +118,24 @@
         max-width: 98vw;
         padding: 1.2em 0.6em 1.2em 0.6em;
       }
+      .feac-logo-img {
+        height: 48px;
+        margin-right: 8px;
+      }
+      .feac-navbar .navbar-brand {
+        padding-right: 12px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Barra de navegación -->
+  <!-- Barra de navegación con logo -->
   <nav class="navbar feac-navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid px-0">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/feac logo.png" alt="Logo FEAC Reformistas" class="feac-logo-img">
+        <!-- Puedes poner aquí el texto si quieres, por ejemplo: <span style="color:#fff;font-weight:900;font-size:1.6rem;">FEAC</span> -->
+      </a>
       <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span> Menu
@@ -165,7 +189,7 @@
   </div>
   <footer class="footer text-faded text-center py-5">
     <div class="container">
-      <p class="m-0 small">Copyright &copy; FEAC Reformistas 2018</p>
+      <p class="m-0 small">&copy; FEAC Reformistas 2018</p>
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
