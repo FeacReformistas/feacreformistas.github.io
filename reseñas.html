@@ -1,34 +1,255 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Reseñas - FEAC Reformistas</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<<style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Servicios | FEAC Reformistas</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+  <style>
     body {
       background: url('img/bg.jpg') no-repeat center center fixed;
       background-size: cover;
       margin: 0;
       font-family: 'Raleway', Arial, sans-serif;
     }
-  <header>
-    <div class="banner">
-      <div class="container">
-        <img src="logo-feac.png" alt="Logo FEAC Reformistas" class="logo">
-        <span class="titulo-header">FEAC <span class="azul">REFORMISTAS</span></span>
-        <nav>
-          <ul>
-            <li><a href="index.html">INICIO</a></li>
-            <li><a href="servicios.html">SERVICIOS</a></li>
-            <li><a href="nosotros.html">NOSOTROS</a></li>
-            <li><a href="reseñas.html" class="active">RESEÑAS</a></li>
-            <li><a href="contacto.html">CONTACTO</a></li>
-          </ul>
-        </nav>
+    /* CABECERA FLEX: LOGO IZQ, TITULO CENTRO */
+    .header-feac {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100vw;
+      min-height: 120px;
+      margin-bottom: 0;
+      background: transparent;
+    }
+    .header-feac .logo-container {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+    .header-feac .logo-container img {
+      height: 110px;
+      display: block;
+    }
+    .header-feac .title-container {
+      text-align: center;
+      z-index: 1;
+    }
+    .logo-feac {
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      margin-bottom: 0;
+      box-shadow: none;
+      text-align: center;
+    }
+    .logo-feac .feac {
+      font-family: 'Raleway', Arial, sans-serif;
+      font-size: 2.2rem;
+      font-weight: 100;
+      letter-spacing: 7px;
+      color: #fff;
+      text-shadow: 2px 3px 12px #000, 0 2px 8px #25508c44;
+      line-height: 1.1;
+      display: block;
+    }
+    .logo-feac .reformistas {
+      font-family: 'Raleway', Arial, sans-serif;
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #3d81e0;
+      display: block;
+      margin-top: 4px;
+      text-shadow: 1px 2px 8px #000, 0 1px 7px #25508c33;
+    }
+    /* MENÚ AZUL */
+    .custom-navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #22509B;
+      height: 58px;
+      width: 100vw;
+      min-width: 320px;
+      margin: 0;
+      border-radius: 0;
+      box-shadow: 0 7px 24px rgba(0,0,0,0.12);
+      position: relative;
+      z-index: 20;
+      margin-bottom: 0;
+      border: none;
+    }
+    .custom-navbar ul {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .custom-navbar li {
+      margin: 0 44px;
+      display: flex;
+      align-items: center;
+    }
+    .custom-navbar .nav-link {
+      color: #fff !important;
+      font-weight: bold;
+      font-size: 1.18rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: color 0.17s;
+      text-shadow: 1px 1px 2px #00000030;
+      line-height: 58px;
+      display: inline-block;
+    }
+    .custom-navbar .nav-link.active,
+    .custom-navbar .nav-link:hover {
+      color: #bcd9fa !important;
+      text-decoration: underline;
+    }
+    /* Tarjetas de servicio */
+    .service-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+      gap: 2.5rem;
+    }
+    .service-card {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.97);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      max-width: 700px;
+      min-width: 320px;
+      width: 100%;
+      min-height: 220px;
+      overflow: hidden;
+      padding: 0;
+    }
+    .service-card-img {
+      width: 180px;
+      min-width: 140px;
+      max-width: 220px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px 0 0 12px;
+      margin: 24px 0 24px 24px;
+      box-shadow: 0 4px 18px rgba(60,60,60,0.10);
+      background: #fafbfc;
+    }
+    .service-card-content {
+      flex: 1;
+      padding: 28px 32px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .service-card-content h3 {
+      font-weight: 700;
+      font-size: 1.01rem;
+      letter-spacing: 2px;
+      margin: 0 0 8px 0;
+      color: #222;
+      text-transform: uppercase;
+    }
+    .service-card-content h1 {
+      font-size: 1.4rem;
+      color: #25508C;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .service-card-content ul {
+      color: #393939;
+      font-size: 1.04rem;
+      margin: 0;
+      padding-left: 1.2em;
+      font-family: 'Lora', serif;
+    }
+    .service-card-content li {
+      margin-bottom: 0.4em;
+    }
+    @media (max-width: 1100px) {
+      .header-feac { min-height: 70px;}
+      .header-feac .logo-container { left: 8px; }
+    }
+    @media (max-width: 900px) {
+      .header-feac .logo-container img { height: 60px; }
+      .service-card {
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 0;
+        max-width: 97vw;
+        width: 97vw;
+        padding: 0;
+      }
+      .service-card-img {
+        width: 98vw;
+        min-width: 0;
+        max-width: 98vw;
+        height: auto;
+        border-radius: 12px 12px 0 0;
+        margin: 0;
+        margin-top: 14px;
+        margin-bottom: 0;
+        align-self: center;
+      }
+      .service-card-content {
+        padding: 18px 10px 18px 10px;
+      }
+    }
+    @media (max-width: 700px) {
+      .header-feac { min-height: 50px;}
+      .header-feac .logo-container { left: 4px;}
+      .header-feac .logo-container img { height: 56px;}
+    }
+    @media (max-width: 600px) {
+      .service-card-content h1 { font-size: 1.1rem; }
+      .service-card-content h3 { font-size: 0.91rem; }
+    }
+    footer {
+      margin-top: 2em;
+      color: #222;
+      text-align: center;
+      font-size: 0.95em;
+      background: none;
+      box-shadow: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- CABECERA: Logo a la izquierda, título centrado -->
+  <div class="header-feac">
+    <div class="logo-container">
+      <img src="img/feac logo.png" alt="Logo FEAC Reformistas">
+    </div>
+    <div class="title-container">
+      <div class="logo-feac">
+        <span class="feac">FEAC</span>
+        <span class="reformistas">REFORMISTAS</span>
       </div>
     </div>
-  </header>
+  </div>
+  <!-- Barra azul menú centrado -->
+  <nav class="custom-navbar">
+    <ul>
+      <li><a href="index.html" class="nav-link active">INICIO</a></li>
+      <li><a href="servicios.html" class="nav-link">SERVICIOS</a></li>
+      <li><a href="nosotros.html" class="nav-link">NOSOTROS</a></li>
+      <li><a href="contacto.html" class="nav-link">CONTACTO</a></li>
+      <li><a href="reseñas.html" class="nav-link">RESEÑAS</a></li>
+    </ul>
   <main>
     <section id="reseñas">
       <h2>Reseñas</h2>
