@@ -13,17 +13,31 @@
       font-family: 'Raleway', Arial, sans-serif;
     }
 
-    /* LOGO FEAC ARRIBA IZQUIERDA */
-    .logo-feac-container {
+    /* LOGO FEAC Y CABECERA */
+    .header-feac {
       display: flex;
-      flex-direction: row;
       align-items: center;
-      justify-content: flex-start;
-      min-height: 70px;
       width: 100vw;
-      margin-top: 18px;
+      min-height: 70px;
+      position: relative;
+      background: transparent;
       margin-bottom: 0;
-      margin-left: 18px; /* Ajusta o pon 0 si quieres completamente pegado a la izquierda */
+    }
+    .header-feac .logo-container {
+      flex: 0 0 auto;
+      margin-left: 18px;
+      z-index: 2;
+    }
+    .header-feac .logo-container img {
+      height: 56px;
+      display: block;
+    }
+    .header-feac .title-container {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      width: max-content;
     }
     .logo-feac {
       background: none;
@@ -31,7 +45,7 @@
       padding: 0;
       margin-bottom: 0;
       box-shadow: none;
-      text-align: left;
+      text-align: center;
     }
     .logo-feac .feac {
       font-family: 'Raleway', Arial, sans-serif;
@@ -242,7 +256,7 @@
 
     /* RESPONSIVE */
     @media (max-width: 1100px) {
-      .logo-feac-container { min-height: 60px;}
+      .header-feac { min-height: 60px;}
       .hero-inner { flex-direction: column; width: 98vw; }
       .glass-box, .hero-img-wrap {
         width: 100%;
@@ -257,9 +271,16 @@
       .servicios-container {
         padding: 16px 8vw 14px 8vw;
       }
+      .header-feac .title-container {
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        transform: translate(-50%, 0);
+        width: 80vw;
+      }
     }
     @media (max-width: 700px) {
-      .logo-feac-container { min-height: 50px;}
+      .header-feac { min-height: 50px;}
       .hero-inner { flex-direction: column; width: 98vw; }
       .glass-box, .hero-img-wrap {
         width: 100%;
@@ -274,16 +295,27 @@
       .servicios-container h2 {
         font-size: 1.5rem;
       }
+      .header-feac .title-container {
+        position: absolute;
+        left: 50%;
+        top: 15px;
+        transform: translate(-50%, 0);
+        width: 96vw;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Logo y texto FEAC arriba a la izquierda -->
-  <div class="logo-feac-container">
-    <img src="img/feac logo.png" alt="Logo FEAC Reformistas" style="height:56px; margin-right:16px;">
-    <div class="logo-feac">
-      <span class="feac">FEAC</span>
-      <span class="reformistas">REFORMISTAS</span>
+  <!-- CABECERA: Logo a la izquierda, título centrado -->
+  <div class="header-feac">
+    <div class="logo-container">
+      <img src="img/feac logo.png" alt="Logo FEAC Reformistas">
+    </div>
+    <div class="title-container">
+      <div class="logo-feac">
+        <span class="feac">FEAC</span>
+        <span class="reformistas">REFORMISTAS</span>
+      </div>
     </div>
   </div>
   <!-- Barra azul centrada y horizontal -->
