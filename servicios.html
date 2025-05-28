@@ -8,114 +8,111 @@
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
   <style>
     body {
-      background: url('img/bg.jpg') center center/cover no-repeat fixed;
+      background: url('img/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
       margin: 0;
-      padding: 0;
       font-family: 'Raleway', Arial, sans-serif;
-      min-height: 100vh;
     }
-    /* Header superior: logo y título centrado */
-    .header-top {
-      width: 100vw;
+    /* CABECERA FLEX: LOGO IZQ, TITULO CENTRO */
+    .header-feac {
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: center;
       position: relative;
-      margin-top: 30px;
+      width: 100vw;
+      min-height: 120px;
       margin-bottom: 0;
+      background: transparent;
     }
-    .logo-img {
+    .header-feac .logo-container {
       position: absolute;
-      left: 42px;
+      left: 18px;
       top: 50%;
       transform: translateY(-50%);
-      height: 90px;
-      width: auto;
+      z-index: 2;
+    }
+    .header-feac .logo-container img {
+      height: 110px;
       display: block;
     }
-    .header-title {
+    .header-feac .title-container {
       text-align: center;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.2em;
+      z-index: 1;
     }
-    .header-title .feac {
+    .logo-feac {
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      margin-bottom: 0;
+      box-shadow: none;
+      text-align: center;
+    }
+    .logo-feac .feac {
       font-family: 'Raleway', Arial, sans-serif;
-      font-size: 2.6rem;
+      font-size: 2.2rem;
       font-weight: 100;
       letter-spacing: 7px;
-      color: #25508C;
-      text-shadow: 2px 3px 12px #0001, 0 2px 8px #25508c27;
-      line-height: 1.05;
+      color: #fff;
+      text-shadow: 2px 3px 12px #000, 0 2px 8px #25508c44;
+      line-height: 1.1;
+      display: block;
     }
-    .header-title .reformistas {
+    .logo-feac .reformistas {
       font-family: 'Raleway', Arial, sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: bold;
       letter-spacing: 3px;
       color: #3d81e0;
-      text-shadow: 1px 2px 8px #0001, 0 1px 7px #25508c1c;
-      line-height: 1.1;
+      display: block;
+      margin-top: 4px;
+      text-shadow: 1px 2px 8px #000, 0 1px 7px #25508c33;
     }
-    /* Banner azul menú centrado */
-    .main-navbar {
+    /* MENÚ AZUL */
+    .custom-navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #22509B;
+      height: 58px;
       width: 100vw;
-      background: #25508C;
-      min-height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-sizing: border-box;
-      padding: 0;
-      margin-bottom: 2.3rem;
-    }
-    .main-navbar ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      min-width: 320px;
       margin: 0;
-      padding: 0;
-      list-style: none;
-      gap: 6px;
-    }
-    .main-navbar li {
-      margin: 0;
-    }
-    .main-navbar a {
-      color: #fff;
-      font-family: 'Raleway', Arial, sans-serif;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 1.13rem;
-      padding: 0.7em 1.7em;
-      text-decoration: none;
-      opacity: 0.93;
+      border-radius: 0;
+      box-shadow: 0 7px 24px rgba(0,0,0,0.12);
+      position: relative;
+      z-index: 20;
+      margin-bottom: 0;
       border: none;
-      background: none;
-      transition: opacity 0.2s, color 0.2s, border-bottom 0.2s;
-      border-bottom: 2px solid transparent;
+    }
+    .custom-navbar ul {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .custom-navbar li {
+      margin: 0 44px;
+      display: flex;
+      align-items: center;
+    }
+    .custom-navbar .nav-link {
+      color: #fff !important;
+      font-weight: bold;
+      font-size: 1.18rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: color 0.17s;
+      text-shadow: 1px 1px 2px #00000030;
+      line-height: 58px;
       display: inline-block;
-      text-align: center;
     }
-    .main-navbar a.active,
-    .main-navbar a:hover,
-    .main-navbar a:focus {
-      opacity: 1;
-      border-bottom: 2px solid #fff;
-    }
-    @media (max-width: 900px) {
-      .header-top { flex-direction: column; align-items: center; margin-top: 15px; }
-      .logo-img { position: static; left: unset; top: unset; transform: none; height: 60px; margin-bottom: 7px; }
-      .header-title .feac { font-size: 1.5rem; }
-      .header-title .reformistas { font-size: 0.9rem; }
-      .main-navbar { margin-bottom: 1.2rem; }
-      .main-navbar ul { gap: 1px; }
-      .main-navbar a { padding: 0.7em 0.7em; font-size: 1rem; }
+    .custom-navbar .nav-link.active,
+    .custom-navbar .nav-link:hover {
+      color: #bcd9fa !important;
+      text-decoration: underline;
     }
     /* Tarjetas de servicio */
     .service-container {
@@ -183,7 +180,12 @@
     .service-card-content li {
       margin-bottom: 0.4em;
     }
+    @media (max-width: 1100px) {
+      .header-feac { min-height: 70px;}
+      .header-feac .logo-container { left: 8px; }
+    }
     @media (max-width: 900px) {
+      .header-feac .logo-container img { height: 60px; }
       .service-card {
         flex-direction: column;
         align-items: flex-start;
@@ -207,6 +209,11 @@
         padding: 18px 10px 18px 10px;
       }
     }
+    @media (max-width: 700px) {
+      .header-feac { min-height: 50px;}
+      .header-feac .logo-container { left: 4px;}
+      .header-feac .logo-container img { height: 56px;}
+    }
     @media (max-width: 600px) {
       .service-card-content h1 { font-size: 1.1rem; }
       .service-card-content h3 { font-size: 0.91rem; }
@@ -222,21 +229,25 @@
   </style>
 </head>
 <body>
-  <!-- Header superior: logo a la izquierda, título centrado -->
-  <div class="header-top">
-    <img src="img/feac logo.png" alt="Logo FEAC Reformistas" class="logo-img">
-    <div class="header-title">
-      <span class="feac">FEAC</span>
-      <span class="reformistas">REFORMISTAS</span>
+  <!-- CABECERA: Logo a la izquierda, título centrado -->
+  <div class="header-feac">
+    <div class="logo-container">
+      <img src="img/feac logo.png" alt="Logo FEAC Reformistas">
+    </div>
+    <div class="title-container">
+      <div class="logo-feac">
+        <span class="feac">FEAC</span>
+        <span class="reformistas">REFORMISTAS</span>
+      </div>
     </div>
   </div>
   <!-- Barra azul menú centrado -->
-  <nav class="main-navbar">
+  <nav class="custom-navbar">
     <ul>
-      <li><a href="index.html">INICIO</a></li>
-      <li><a href="servicios.html" class="active">SERVICIOS</a></li>
-      <li><a href="nosotros.html">NOSOTROS</a></li>
-      <li><a href="contacto.html">CONTACTO</a></li>
+      <li><a href="index.html" class="nav-link">INICIO</a></li>
+      <li><a href="servicios.html" class="nav-link active">SERVICIOS</a></li>
+      <li><a href="nosotros.html" class="nav-link">NOSOTROS</a></li>
+      <li><a href="contacto.html" class="nav-link">CONTACTO</a></li>
     </ul>
   </nav>
   <!-- Tarjetas de servicios -->
@@ -315,5 +326,7 @@
   <footer>
     &copy; FEAC Reformistas 2018
   </footer>
+</body>
+</html>
 </body>
 </html>
