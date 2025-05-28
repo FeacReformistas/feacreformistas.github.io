@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servicios | FEAC Reformistas</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700,800&display=swap">
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
   <style>
     body {
@@ -24,13 +24,41 @@
       z-index: -1;
       pointer-events: none;
     }
-    /* Banner azul menú */
+    /* Logo/Heading arriba del banner */
+    .site-heading {
+      text-align: center;
+      margin-top: 38px;
+      margin-bottom: 0;
+      letter-spacing: 1px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 2.7rem;
+      color: #fff;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+      line-height: 1.1;
+    }
+    .site-heading .site-heading-lower {
+      display: block;
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    .site-heading .site-heading-upper {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #2894e2;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      margin-bottom: 0.4em;
+    }
+    /* Banner azul y menú */
     .main-navbar {
       background: #29529e;
       font-weight: bold;
       letter-spacing: 1px;
       box-shadow: 0 2px 8px rgba(0,0,0,.04);
-      min-height: 60px;
+      width: 100%;
     }
     .main-navbar .navbar-nav {
       width: 100%;
@@ -43,20 +71,23 @@
       text-transform: uppercase;
       font-weight: bold;
       letter-spacing: 2px;
-      padding: 18px 34px;
-      transition: background 0.2s;
+      padding: 18px 38px;
+      transition: background 0.2s, color 0.2s, border-bottom 0.2s;
       border-radius: 0;
+      border-bottom: 3px solid transparent;
+      position: relative;
     }
     .main-navbar .nav-link.active,
     .main-navbar .nav-link:focus,
     .main-navbar .nav-link:hover {
       background: #19305a !important;
       color: #fff !important;
-      border-radius: 0;
+      border-bottom: 3px solid #fff;
     }
     .main-navbar .nav-item {
       margin: 0;
     }
+    .navbar-brand { display: none !important;}
     /* Cards de servicio */
     .service-card-container {
       display: flex;
@@ -64,6 +95,7 @@
       align-items: center;
       margin-top: 60px;
       flex-wrap: wrap;
+      margin-bottom: 40px;
     }
     .service-card {
       display: flex;
@@ -124,19 +156,26 @@
       padding-left: 22px;
     }
     @media (max-width: 950px) {
+      .main-navbar .nav-link { padding: 14px 12px; }
+      .site-heading { font-size: 1.7rem; }
+      .site-heading .site-heading-lower { font-size: 1.3rem; }
+      .site-heading .site-heading-upper { font-size: 1.1rem; }
       .service-card { flex-direction: column; align-items: center; }
       .service-card-img { max-width: 95vw; }
       .service-card-text { padding: 24px 16px 16px 16px; }
-      .main-navbar .nav-link { padding: 14px 10px;}
     }
     @media (max-width: 600px) {
+      .main-navbar .nav-link { font-size: 1rem; padding: 10px 4vw; }
       .service-card { margin: 0 2px; }
-      .main-navbar .nav-link { font-size: 1rem; padding: 8px 3vw; }
     }
   </style>
 </head>
 <body>
-  <!-- BANNER AZUL MENÚ -->
+  <!-- Logo arriba del banner -->
+  <div class="site-heading text-center">
+    <span class="site-heading-lower">FEAC <span style="color:#2894e2;">REFORMISTAS</span></span>
+  </div>
+  <!-- Banner azul menú -->
   <nav class="navbar navbar-expand-lg main-navbar">
     <div class="container-fluid p-0 m-0">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -153,7 +192,6 @@
       </div>
     </div>
   </nav>
-
   <main>
     <section class="service-card-container">
       <!-- Card Electricista -->
