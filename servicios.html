@@ -23,28 +23,61 @@
       z-index: -1;
       pointer-events: none;
     }
-    .logo-header {
-      text-align: center;
-      padding: 44px 0 12px 0;
-    }
-    .logo-header .site-heading-lower {
-      font-size: 3.3rem;
-      color: #222;
-      font-weight: 100;
-      letter-spacing: 2px;
-      display: block;
+    /* LOGO CABECERA */
+    .header-feac {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100vw;
+      min-height: 120px;
       margin-bottom: 0;
-      line-height: 1;
+      background: transparent;
     }
-    .logo-header .site-heading-upper {
-      font-size: 2.2rem;
-      color: #5ca5e8;
-      font-weight: 900;
-      letter-spacing: 1.5px;
+    .header-feac .logo-container {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+    .header-feac .logo-container img {
+      height: 110px;
       display: block;
-      margin-top: 0;
-      line-height: 1;
     }
+    .header-feac .title-container {
+      text-align: center;
+      z-index: 1;
+    }
+    .logo-feac {
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      margin-bottom: 0;
+      box-shadow: none;
+      text-align: center;
+    }
+    .logo-feac .feac {
+      font-family: 'Raleway', Arial, sans-serif;
+      font-size: 2.2rem;
+      font-weight: 100;
+      letter-spacing: 7px;
+      color: #fff;
+      text-shadow: 2px 3px 12px #000, 0 2px 8px #25508c44;
+      line-height: 1.1;
+      display: block;
+    }
+    .logo-feac .reformistas {
+      font-family: 'Raleway', Arial, sans-serif;
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #3d81e0;
+      display: block;
+      margin-top: 4px;
+      text-shadow: 1px 2px 8px #000, 0 1px 7px #25508c33;
+    }
+    /* NAVBAR */
     .custom-navbar {
       width: 100vw;
       background: #25508C;
@@ -98,7 +131,7 @@
       cursor: default;
     }
     @media (max-width: 900px) {
-      .logo-header { padding-left: 0; }
+      .header-feac .logo-container img { height: 60px; }
       .custom-navbar ul { flex-direction: column; height: auto; }
       .custom-navbar a { width: 100%; display: block; padding: 1em 0; font-size: 1rem; }
     }
@@ -179,18 +212,26 @@
   </style>
 </head>
 <body>
-  <div class="logo-header">
-    <span class="site-heading-lower">FEAC</span>
-    <span class="site-heading-upper">REFORMISTAS</span>
+  <!-- CABECERA LOGO + TITULO CENTRADO -->
+  <div class="header-feac">
+    <div class="logo-container">
+      <img src="img/feac logo.png" alt="Logo FEAC Reformistas">
+    </div>
+    <div class="title-container">
+      <div class="logo-feac">
+        <span class="feac">FEAC</span>
+        <span class="reformistas">REFORMISTAS</span>
+      </div>
+    </div>
   </div>
- <nav class="custom-navbar">
-  <ul>
-    <li><a href="index.html">INICIO</a></li>
-    <li><a href="servicios.html">SERVICIOS</a></li>
-    <li><a href="nosotros.html">NOSOTROS</a></li>
-    <li><a href="contacto.html">CONTACTO</a></li>
-  </ul>
-</nav>
+  <nav class="custom-navbar">
+    <ul>
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="servicios.html" class="active">SERVICIOS</a></li>
+      <li><a href="nosotros.html">NOSOTROS</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+    </ul>
+  </nav>
   <main>
     <section class="service-card-container">
       <!-- Card Electricista -->
