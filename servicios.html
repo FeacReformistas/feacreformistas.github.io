@@ -1,89 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FEAC Reformistas - Servicios</title>
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios | FEAC Reformistas</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700,800&display=swap">
   <style>
     body {
-      background: url('img/bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      min-height: 100vh;
+      background: url('img/bg.jpg') center center/cover no-repeat fixed;
+      background-color: #3e5a7a;
       margin: 0;
       padding: 0;
-      font-family: 'Raleway', Arial, sans-serif;
-      /* NO overlay, NO filter, NO opacity extra */
+      font-family: 'Raleway', sans-serif;
+      min-height: 100vh;
+      position: relative;
     }
-    /* CABECERA: igual en todas las páginas */
-    .feac-navbar {
-      background: #25508C;
-      padding-left: 0;
-      padding-right: 0;
+    .logo-header {
+      text-align: center;
+      padding: 44px 0 12px 0;
+    }
+    .logo-header .site-heading-lower {
+      font-size: 3.3rem;
+      color: #222;
+      font-weight: 100;
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 0;
+      line-height: 1;
+    }
+    .logo-header .site-heading-upper {
+      font-size: 2.2rem;
+      color: #5ca5e8;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      display: block;
+      margin-top: 0;
+      line-height: 1;
+    }
+    .custom-navbar {
       width: 100vw;
-      min-height: 110px;
+      background: #25508C;
+      min-height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: 0;
+      padding: 0;
       border: none;
     }
-    .feac-navbar-container {
-      width: 100vw;
-      max-width: 1400px;
+    .custom-navbar ul {
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
-      padding-left: 0;
-      padding-right: 0;
-    }
-    .navbar-brand-feac {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      text-decoration: none;
-      padding-left: 18px;
-      padding-right: 36px;
-    }
-    .feac-logo-img {
-      height: 90px;
-      width: auto;
-      display: block;
-    }
-    .feac-title-block {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
-    .feac-title-block .feac {
-      font-family: 'Raleway', Arial, sans-serif;
-      font-size: 2.1rem;
-      font-weight: 100;
-      letter-spacing: 7px;
-      color: #fff;
-      text-shadow: 2px 3px 12px #000, 0 2px 8px #25508c44;
-    }
-    .feac-title-block .reformistas {
-      font-family: 'Raleway', Arial, sans-serif;
-      font-size: 1.1rem;
-      font-weight: bold;
-      letter-spacing: 3px;
-      color: #3d81e0;
-      text-shadow: 1px 2px 8px #000, 0 1px 7px #25508c33;
-    }
-    .feac-menu {
-      display: flex;
-      align-items: center;
-      height: 100%;
       margin: 0;
       padding: 0;
       list-style: none;
+      width: 100%;
+      max-width: 950px;
+      height: 64px;
     }
-    .feac-menu li {
-      margin: 0;
-      padding: 0;
+    .custom-navbar li {
+      flex: 1 1 0;
+      text-align: center;
     }
-    .feac-menu a {
+    .custom-navbar a {
       display: inline-block;
       color: #fff;
       font-family: 'Raleway', Arial, sans-serif;
@@ -98,152 +78,194 @@
       border: none;
       background: none;
     }
-    .feac-menu a.active,
-    .feac-menu a:hover,
-    .feac-menu a:focus {
+    .custom-navbar a.active,
+    .custom-navbar a:hover,
+    .custom-navbar a:focus {
       opacity: 1;
       text-decoration: underline;
     }
-    .feac-menu a.disabled {
+    .custom-navbar a.disabled {
       opacity: 0.4;
       pointer-events: none;
       cursor: default;
     }
-    @media (max-width: 1100px) {
-      .feac-navbar-container { flex-direction: column; align-items: flex-start; }
-      .navbar-brand-feac { padding-bottom: 0.5em; }
-      .feac-menu { width: 100vw; justify-content: center; }
-      .feac-menu a { font-size: 1rem; padding: 1em 1.2em; }
-      .feac-logo-img { height: 60px; }
-      .feac-title-block .feac { font-size: 1.4rem; }
-      .feac-title-block .reformistas { font-size: 0.9rem; }
+    @media (max-width: 900px) {
+      .logo-header { padding-left: 0; }
+      .custom-navbar ul { flex-direction: column; height: auto; }
+      .custom-navbar a { width: 100%; display: block; padding: 1em 0; font-size: 1rem; }
     }
-    /* CONTENIDO */
-    .cuadrados-container {
-      display: flex;
-      gap: 2em;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      width: 100%;
-      z-index: 3;
-      position: relative;
-      margin-top: 2.5rem;
-      margin-bottom: 2.5rem;
-    }
-    .cuadrado {
-      background: rgba(255,255,255,0.96);
-      width: 500px;
-      border-radius: 10px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.20);
-      padding: 2em 1.3em;
-      margin: 1em 0.5em 2em 0.5em;
+    .service-card-container {
       display: flex;
       flex-direction: column;
-      align-items: stretch;
-      min-height: 200px;
-      max-width: 97vw;
+      align-items: center;
+      margin-top: 60px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .service-card {
+      display: flex;
+      background: rgba(255,255,255,0.97);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
       overflow: hidden;
+      max-width: 850px;
+      margin: 30px 10px 30px 10px;
+      width: 100%;
+      min-height: 260px;
+      flex-wrap: wrap;
     }
-    .cuadrado img {
-      width: 120px;
+    .service-card-img-container {
+      flex: 1 1 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      min-width: 240px;
+      min-height: 200px;
+    }
+    .service-card-img {
+      width: 100%;
       height: auto;
-      float: left;
-      margin-right: 1.2em;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      max-width: 350px;
+      border-radius: 14px;
+      margin: 18px;
+      object-fit: cover;
+      box-shadow: 0 4px 18px rgba(60,60,60,0.10);
     }
-    .ajustable h1, .ajustable b {
-      text-align: left;
-      display: block;
-      margin-bottom: 0.5em;
-      font-weight: bold;
+    .service-card-text {
+      flex: 2 1 320px;
+      padding: 32px 28px 28px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    .ajustable h2 {
-      font-size: 1.4em;
-      margin: 0.8em 0 0.4em 0;
-      color: #25508C;
+    .service-card-text h3 {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      color: #222;
     }
-    .ajustable p, .ajustable ul {
-      text-align: left;
-      margin: 0;
-      font-size: 1.07rem;
-      font-family: 'Lora', serif;
+    .service-card-text h1 {
+      font-size: 1.6rem;
+      color: #3e5a7a;
+      margin-bottom: 10px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
-    .ajustable ul {
-      padding-left: 1.2em;
-      margin-bottom: 0.8em;
+    .service-card-text ul {
+      color: #444;
+      font-size: 1rem;
+      margin-bottom: 12px;
+      padding-left: 22px;
     }
-    .servicio-titulo {
-      color: #25508C;
-      font-size: 1.2em;
-      font-weight: bold;
-      margin-bottom: 0.3em;
-      margin-top: 0.2em;
+    @media (max-width: 950px) {
+      .service-card { flex-direction: column; align-items: center; }
+      .service-card-img { max-width: 95vw; }
+      .service-card-text { padding: 24px 16px 16px 16px; }
     }
-    @media (max-width: 900px) {
-      .cuadrados-container { flex-direction: column; gap: 1em; align-items: center; }
-      .cuadrado { width: 98vw; max-width: 98vw; padding: 1.2em 0.6em 1.2em 0.6em; }
-      .cuadrado img { width: 84px; margin-right: 0.7em; }
-      .ajustable h2 { font-size: 1.15em; }
+    @media (max-width: 600px) {
+      .service-card { margin: 0 2px; }
     }
   </style>
 </head>
 <body>
-  <!-- Cabecera igual que en el resto de páginas -->
-  <div class="feac-navbar">
-    <div class="feac-navbar-container">
-      <a class="navbar-brand-feac" href="index.html">
-        <img src="img/feac logo.png" alt="Logo FEAC Reformistas" class="feac-logo-img">
-        <span class="feac-title-block">
-          <span class="feac">FEAC</span>
-          <span class="reformistas">REFORMISTAS</span>
-        </span>
-      </a>
-      <ul class="feac-menu">
-        <li><a href="index.html">INICIO</a></li>
-        <li><a href="servicios.html" class="active">SERVICIOS</a></li>
-        <li><a href="nosotros.html">NOSOTROS</a></li>
-        <li><a href="contacto.html">CONTACTO</a></li>
-      </ul>
-    </div>
+  <div class="logo-header">
+    <span class="site-heading-lower">FEAC</span>
+    <span class="site-heading-upper">REFORMISTAS</span>
   </div>
-  <!-- Contenido de servicios -->
-  <div class="cuadrados-container">
-    <div class="cuadrado">
-      <div class="ajustable">
-        <div class="servicio-titulo">SERVICIO</div>
-        <h1>ELECTRICISTA</h1>
-        <ul>
-          <li>¿Pisos sin Luz? Restauramos la electricidad en tu hogar rápidamente, cualquier día y hora.</li>
-          <li>¿Poca potencia? Cambiamos Interruptores de Control de Potencia.</li>
-          <li>Miedo a cortocircuitos? Revisamos cuadros eléctricos para detectar fallos o irregularidades.</li>
-          <li>Cambio de acometida con máxima precisión y seguridad.</li>
-          <li>Instalación de lámparas y enchufes en cualquier estancia.</li>
-          <li>Instalación de cuadros eléctricos según normativa vigente.</li>
-          <li>Cambio de magnetotérmicos para proteger tu sistema eléctrico.</li>
-        </ul>
+  <nav class="custom-navbar">
+    <ul>
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="servicios.html" class="active">SERVICIOS</a></li>
+      <li><a href="nosotros.html">NOSOTROS</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section class="service-card-container">
+      <!-- Card Electricista -->
+      <div class="service-card">
+        <div class="service-card-img-container">
+          <img src="img/products-01.jpg" alt="Servicio Electricista" class="service-card-img">
+        </div>
+        <div class="service-card-text">
+          <h3>SERVICIO</h3>
+          <h1>ELECTRICISTA</h1>
+          <ul>
+            <li>¿Pisos sin Luz? Restauramos la electricidad en tu hogar rápidamente, cualquier día y hora.</li>
+            <li>¿Poca potencia? Cambiamos Interruptores de Control de Potencia.</li>
+            <li>¿Miedo a cortocircuitos? Revisamos cuadros eléctricos para detectar fallos o irregularidades.</li>
+            <li>Cambio de acometida con máxima precisión y seguridad.</li>
+            <li>Instalación de lámparas y enchufes en cualquier estancia.</li>
+            <li>Instalación de cuadros eléctricos según normativa vigente.</li>
+            <li>Cambio de magnetotérmicos para proteger tu sistema eléctrico.</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="cuadrado">
-      <div class="ajustable">
-        <div class="servicio-titulo">SERVICIO</div>
-        <h1>ALBAÑILERÍA</h1>
-        <ul>
-          <li>Cambiamos azulejos de baño y cocina.</li>
-          <li>Levantamos paredes de ladrillo o pladur.</li>
-          <li>Solados y alicatados con acabados profesionales.</li>
-          <li>Reparación de humedades y filtraciones.</li>
-          <li>Pequeñas reformas y grandes obras.</li>
-        </ul>
+      <!-- Card Albañilería -->
+      <div class="service-card">
+        <div class="service-card-img-container">
+          <img src="img/products-02.jpg" alt="Servicio Albañilería" class="service-card-img">
+        </div>
+        <div class="service-card-text">
+          <h3>SERVICIO</h3>
+          <h1>ALBAÑILERÍA</h1>
+          <ul>
+            <li>Cambiamos azulejos de baño y cocina.</li>
+            <li>Levantamos paredes de ladrillo o pladur.</li>
+            <li>Cambiamos tu bañera por plato de ducha.</li>
+            <li>Ponemos o restauramos baldosas de suelo.</li>
+            <li>Alicatamos baño o cocina.</li>
+            <li>Quitamos o movemos paredes.</li>
+            <li>Ponemos escayola en paredes o techos.</li>
+            <li>Instalamos y reparamos aire acondicionados.</li>
+            <li>Pintamos todo tipo de inmuebles.</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <!-- Puedes añadir más servicios aquí -->
-  </div>
-  <footer class="footer text-faded text-center py-5">
-    <div class="container">
-      <p class="m-0 small">&copy; FEAC Reformistas 2018</p>
-    </div>
-  </footer>
+      <!-- Card Fontanería -->
+      <div class="service-card">
+        <div class="service-card-img-container">
+          <img src="img/products-03.jpg" alt="Servicio Fontanería" class="service-card-img">
+        </div>
+        <div class="service-card-text">
+          <h3>SERVICIO</h3>
+          <h1>FONTANERÍA</h1>
+          <ul>
+            <li>Atascos en fregaderos.</li>
+            <li>Averías en el baño.</li>
+            <li>Cisternas que pierden agua.</li>
+            <li>Radiadores que gotean.</li>
+            <li>Agua sin presión.</li>
+            <li>Fuga en tuberías.</li>
+            <li>Reparación e instalación de calderas, calentadores y termos.</li>
+            <li>Reparación de bajantes, montantes y desagües.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Card Carpintería -->
+      <div class="service-card">
+        <div class="service-card-img-container">
+          <img src="img/puerta.jpg" alt="Servicio Carpintería" class="service-card-img">
+        </div>
+        <div class="service-card-text">
+          <h3>SERVICIO</h3>
+          <h1>CARPINTERÍA</h1>
+          <ul>
+            <li>Reparaciones y arreglos de puertas, ventanas, cocinas, armarios, muebles.</li>
+            <li>Sustitución de marcos, puertas o molduras.</li>
+            <li>Añadir o cambiar cerraduras, picaportes y manetas.</li>
+            <li>Reparamos puertas correderas y sustitución de guías.</li>
+            <li>Reparamos vidrios de puertas.</li>
+            <li>Restauramos ventanas y balconeras de madera.</li>
+            <li>Ajustamos ventanas que no cierran bien.</li>
+            <li>Instalamos ventanas y puertas de aluminio.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
