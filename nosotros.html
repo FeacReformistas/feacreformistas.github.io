@@ -8,90 +8,100 @@
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
   <style>
     body {
-      background: url('img/bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      min-height: 100vh;
+      background: url('img/bg.jpg') center center/cover no-repeat fixed;
       margin: 0;
       padding: 0;
       font-family: 'Raleway', Arial, sans-serif;
+      min-height: 100vh;
     }
-    /* Cabecera principal */
-    .main-header {
-      width: 100vw;
-      background: #25508C;
+    /* Header Logo + Título */
+    .header-logo-title {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 36px 0 18px;
-      min-height: 110px;
-    }
-    .header-left {
-      display: flex;
-      align-items: center;
+      padding: 32px 0 18px 38px;
       gap: 18px;
+      background: transparent;
+      width: 100vw;
+      box-sizing: border-box;
     }
-    .logo-img {
+    .header-logo-title img {
       height: 90px;
       width: auto;
       display: block;
     }
-    .logo-title {
+    .header-title-block {
       display: flex;
       flex-direction: column;
       line-height: 1;
-      justify-content: center;
     }
-    .logo-title .feac {
+    .header-title-block .feac {
       font-family: 'Raleway', Arial, sans-serif;
       font-size: 2.1rem;
       font-weight: 100;
       letter-spacing: 7px;
-      color: #fff;
-      text-shadow: 2px 3px 12px #000, 0 2px 8px #25508c44;
+      color: #25508C;
+      text-shadow: 2px 3px 12px #0001, 0 2px 8px #25508c27;
     }
-    .logo-title .reformistas {
+    .header-title-block .reformistas {
       font-family: 'Raleway', Arial, sans-serif;
       font-size: 1.1rem;
       font-weight: bold;
       letter-spacing: 3px;
       color: #3d81e0;
-      text-shadow: 1px 2px 8px #000, 0 1px 7px #25508c33;
+      text-shadow: 1px 2px 8px #0001, 0 1px 7px #25508c1c;
     }
-    .header-nav {
+    /* Barra azul menú */
+    .main-navbar {
+      width: 100vw;
+      background: #25508C;
+      min-height: 64px;
       display: flex;
       align-items: center;
-      gap: 32px;
+      justify-content: flex-end;
+      box-sizing: border-box;
+      padding: 0 32px 0 0;
     }
-    .header-nav a {
+    .main-navbar ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      gap: 18px;
+    }
+    .main-navbar li {
+      margin: 0;
+    }
+    .main-navbar a {
       color: #fff;
       font-family: 'Raleway', Arial, sans-serif;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 1px;
       font-size: 1.13rem;
+      padding: 0.7em 1.7em;
       text-decoration: none;
       opacity: 0.93;
-      padding-bottom: 3px;
+      border: none;
+      background: none;
+      transition: opacity 0.2s, color 0.2s, border-bottom 0.2s;
       border-bottom: 2px solid transparent;
-      transition: opacity 0.2s, border-bottom 0.2s;
     }
-    .header-nav a.active,
-    .header-nav a:hover,
-    .header-nav a:focus {
+    .main-navbar a.active,
+    .main-navbar a:hover,
+    .main-navbar a:focus {
       opacity: 1;
       border-bottom: 2px solid #fff;
     }
     @media (max-width: 900px) {
-      .main-header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0 8px;
-        min-height: unset;
-      }
-      .header-left { padding-top: 8px; }
-      .logo-img { height: 60px; }
-      .header-nav { gap: 12px; width: 100%; justify-content: center; padding-bottom: 6px; }
-      .header-nav a { font-size: 1rem; }
+      .header-logo-title { flex-direction: column; align-items: flex-start; padding: 18px 0 8px 12px; }
+      .header-logo-title img { height: 56px; }
+      .header-title-block .feac { font-size: 1.3rem; }
+      .header-title-block .reformistas { font-size: 0.85rem; }
+      .main-navbar { padding: 0 2vw 0 0; }
+      .main-navbar ul { gap: 4px; }
+      .main-navbar a { padding: 0.7em 0.7em; font-size: 1rem; }
     }
     /* Banner imagen rodillo */
     .banner-img-container {
@@ -166,23 +176,23 @@
   </style>
 </head>
 <body>
-  <!-- Cabecera igual en todas las páginas -->
-  <header class="main-header">
-    <div class="header-left">
-      <img src="img/feac logo.png" alt="Logo FEAC Reformistas" class="logo-img">
-      <div class="logo-title">
-        <span class="feac">FEAC</span>
-        <span class="reformistas">REFORMISTAS</span>
-      </div>
+  <!-- Logo y título arriba -->
+  <div class="header-logo-title">
+    <img src="img/feac logo.png" alt="Logo FEAC Reformistas">
+    <div class="header-title-block">
+      <span class="feac">FEAC</span>
+      <span class="reformistas">REFORMISTAS</span>
     </div>
-    <nav class="header-nav">
-      <a href="index.html">INICIO</a>
-      <a href="servicios.html">SERVICIOS</a>
-      <a href="nosotros.html" class="active">NOSOTROS</a>
-      <a href="contacto.html">CONTACTO</a>
-    </nav>
-  </header>
-
+  </div>
+  <!-- Barra azul menú debajo -->
+  <nav class="main-navbar">
+    <ul>
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="servicios.html">SERVICIOS</a></li>
+      <li><a href="nosotros.html" class="active">NOSOTROS</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+    </ul>
+  </nav>
   <!-- Imagen de rodillo centrada -->
   <div class="banner-img-container">
     <img src="img/rodillo.jpg" alt="Rodillo de pintura">
