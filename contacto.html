@@ -3,16 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FEAC Reformistas</title>
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet">
+  <title>Contacto | FEAC Reformistas</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
   <style>
     body {
       background: url('img/bg.jpg') no-repeat center center fixed;
       background-size: cover;
       margin: 0;
-      padding: 0;
-      min-height: 100vh;
       font-family: 'Raleway', Arial, sans-serif;
     }
     .header-feac {
@@ -69,61 +67,50 @@
       text-shadow: 1px 2px 8px #000, 0 1px 7px #25508c33;
     }
     .custom-navbar {
-      width: 100vw;
-      background: #25508C;
-      min-height: 64px;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      background: #22509B;
+      height: 58px;
+      width: 100vw;
+      min-width: 320px;
       margin: 0;
-      padding: 0;
+      border-radius: 0;
+      box-shadow: 0 7px 24px rgba(0,0,0,0.12);
+      position: relative;
+      z-index: 20;
+      margin-bottom: 0;
       border: none;
     }
     .custom-navbar ul {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      flex-direction: row;
       width: 100%;
-      max-width: 950px;
-      height: 64px;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
     .custom-navbar li {
-      flex: 1 1 0;
-      text-align: center;
+      margin: 0 44px;
+      display: flex;
+      align-items: center;
     }
-    .custom-navbar a {
-      display: inline-block;
-      color: #fff;
-      font-family: 'Raleway', Arial, sans-serif;
+    .custom-navbar .nav-link {
+      color: #fff !important;
       font-weight: bold;
-      text-transform: uppercase;
+      font-size: 1.18rem;
       letter-spacing: 1px;
-      padding: 0.7em 1.7em;
-      font-size: 1.15rem;
-      opacity: 0.93;
       text-decoration: none;
-      transition: opacity 0.2s, color 0.2s;
-      border: none;
-      background: none;
+      transition: color 0.17s;
+      text-shadow: 1px 1px 2px #00000030;
+      line-height: 58px;
+      display: inline-block;
     }
-    .custom-navbar a.active,
-    .custom-navbar a:hover,
-    .custom-navbar a:focus {
-      opacity: 1;
+    .custom-navbar .nav-link.active,
+    .custom-navbar .nav-link:hover {
+      color: #bcd9fa !important;
       text-decoration: underline;
-    }
-    .custom-navbar a.disabled {
-      opacity: 0.4;
-      pointer-events: none;
-      cursor: default;
-    }
-    @media (max-width: 900px) {
-      .header-feac .logo-container img { height: 60px; }
-      .custom-navbar ul { flex-direction: column; height: auto; }
-      .custom-navbar a { width: 100%; display: block; padding: 1em 0; font-size: 1rem; }
     }
     .main-section {
       display: flex;
@@ -132,69 +119,9 @@
       align-items: center;
       width: 100vw;
       min-height: calc(100vh - 220px);
-      height: calc(100vh - 220px);
       max-width: 900px;
       margin: 0 auto;
       gap: 24px;
-    }
-    .horario-box, .contact-info-box {
-      background: rgba(255,255,255,0.80);
-      border-radius: 18px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.22);
-      border: 3px solid #25508C;
-      max-width: 350px;
-      width: 340px;
-      padding: 32px 22px 30px 22px;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: box-shadow 0.2s;
-      backdrop-filter: blur(3px);
-      box-sizing: border-box;
-    }
-    .horario-title {
-      font-family: 'Raleway', Arial, sans-serif;
-      font-size: 1.12rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: #25508C;
-      text-align: center;
-      margin-bottom: 0.18em;
-    }
-    .horario-big {
-      font-family: 'Raleway', Arial, sans-serif;
-      font-weight: 100;
-      font-size: 1.7rem;
-      letter-spacing: 2px;
-      margin: 0 0 1em 0;
-      color: #25508C;
-      text-align: center;
-    }
-    .horario-list {
-      width: 100%;
-      font-family: 'Lora', serif;
-      font-size: 1.07rem;
-      color: #222;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .horario-list li {
-      display: flex;
-      justify-content: space-between;
-      padding: 7px 0;
-      border-bottom: 1px solid #e9e9e9;
-    }
-    .horario-list li:last-child {
-      border-bottom: none;
-    }
-    .horario-day {
-      font-weight: 700;
-    }
-    .horario-hour {
-      text-align: right;
-      font-weight: 400;
     }
     .contact-info-box {
       background: rgba(255,255,255,0.85);
@@ -226,28 +153,28 @@
       font-size: 1.02rem;
       letter-spacing: 1px;
     }
-    @media (max-width: 900px) {
-      .main-section {
-        flex-direction: column;
-        min-height: unset;
-        height: unset;
-        gap: 24px;
-        align-items: center;
-        max-width: 100vw;
-        padding: 30px 0;
-      }
-      .horario-box, .contact-info-box {
-        width: 95vw;
-        max-width: 350px;
-      }
+    @media (max-width: 1100px) {
+      .header-feac { min-height: 70px;}
+      .header-feac .logo-container { left: 8px; }
+      .main-section { flex-direction: column; max-width: 100vw; }
     }
-    @media (max-width: 600px) {
-      .horario-box, .contact-info-box {
-        padding: 14px 3vw 12px 3vw;
-      }
-      .horario-big {
-        font-size: 1.2rem;
-      }
+    @media (max-width: 900px) {
+      .header-feac .logo-container img { height: 60px; }
+      .main-section { flex-direction: column; max-width: 100vw; }
+      .contact-info-box { width: 95vw; max-width: 350px; }
+    }
+    @media (max-width: 700px) {
+      .header-feac { min-height: 50px;}
+      .header-feac .logo-container { left: 4px;}
+      .header-feac .logo-container img { height: 56px;}
+    }
+    footer {
+      margin-top: 2em;
+      color: #222;
+      text-align: center;
+      font-size: 0.95em;
+      background: none;
+      box-shadow: none;
     }
   </style>
 </head>
@@ -264,38 +191,31 @@
       </div>
     </div>
   </div>
+  <!-- Barra azul menú centrado -->
   <nav class="custom-navbar">
     <ul>
-      <li><a href="index.html">INICIO</a></li>
-      <li><a href="servicios.html">SERVICIOS</a></li>
-      <li><a href="nosotros.html">NOSOTROS</a></li>
-      <li><a href="contacto.html" class="active">CONTACTO</a></li>
+      <li><a href="index.html" class="nav-link">INICIO</a></li>
+      <li><a href="servicios.html" class="nav-link">SERVICIOS</a></li>
+      <li><a href="nosotros.html" class="nav-link">NOSOTROS</a></li>
+      <li><a href="contacto.html" class="nav-link active">CONTACTO</a></li>
     </ul>
   </nav>
-  <section class="main-section">
-    <!-- Horario cuadro -->
-    <div class="horario-box">
-      <div class="horario-title">HORARIOS DE</div>
-      <div class="horario-big">SERVICIO</div>
-      <ul class="horario-list">
-        <li><span class="horario-day">Domingo</span> <span class="horario-hour">Closed</span></li>
-        <li><span class="horario-day">Lunes</span> <span class="horario-hour">8:00 a 19:00</span></li>
-        <li><span class="horario-day">Martes</span> <span class="horario-hour">8:00 a 19:00</span></li>
-        <li><span class="horario-day">Miércoles</span> <span class="horario-hour">8:00 a 19:00</span></li>
-        <li><span class="horario-day">Jueves</span> <span class="horario-hour">8:00 a 19:00</span></li>
-        <li><span class="horario-day">Viernes</span> <span class="horario-hour">8:00 a 19:00</span></li>
-        <li><span class="horario-day">Sábado</span> <span class="horario-hour">9:00 a 17:00</span></li>
-      </ul>
-    </div>
-    <!-- Contact info box -->
-    <div class="contact-info-box">
-      Si tienes alguna pregunta acerca de nuestros servicios, envía un e-mail a
-      <a href="mailto:feacreformistas@gmail.com">feacreformistas@gmail.com</a> y en breve nos pondremos en contacto contigo.<br>
-      También nos puedes llamar en horarios de oficina.
-      <div class="contact-phones">
-        93.119.23.18 &nbsp;·&nbsp; 695.143.185 &nbsp;·&nbsp; 622.556.854
+  <main>
+    <section class="main-section">
+      <div class="contact-info-box">
+        <p>
+          Si tienes alguna pregunta acerca de nuestros servicios, envía un e-mail a
+          <a href="mailto:feacreformistas@gmail.com">feacreformistas@gmail.com</a> y en breve nos pondremos en contacto contigo.<br>
+          También nos puedes llamar en horarios de oficina.
+        </p>
+        <div class="contact-phones">
+          93.119.23.18 &nbsp;·&nbsp; 695.143.185 &nbsp;·&nbsp; 622.556.854
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
+  <footer>
+    &copy; FEAC Reformistas 2018
+  </footer>
 </body>
 </html>
