@@ -14,86 +14,110 @@
       font-family: 'Raleway', Arial, sans-serif;
       min-height: 100vh;
     }
-    /* CABECERA */
-    .main-header {
+    /* Header superior: logo y título centrado */
+    .header-top {
       width: 100vw;
-      background: #25508C;
       display: flex;
+      flex-direction: row;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 36px 0 18px;
-      min-height: 110px;
-      box-sizing: border-box;
-    }
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 18px;
+      justify-content: center;
+      position: relative;
+      margin-top: 30px;
+      margin-bottom: 0;
     }
     .logo-img {
+      position: absolute;
+      left: 42px;
+      top: 50%;
+      transform: translateY(-50%);
       height: 90px;
       width: auto;
       display: block;
     }
-    .logo-title {
+    .header-title {
+      text-align: center;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      line-height: 1;
+      align-items: center;
       justify-content: center;
+      gap: 0.2em;
     }
-    .logo-title .feac {
+    .header-title .feac {
       font-family: 'Raleway', Arial, sans-serif;
-      font-size: 2.1rem;
+      font-size: 2.6rem;
       font-weight: 100;
       letter-spacing: 7px;
-      color: #fff;
-      text-shadow: 2px 3px 12px #000, 0 2px 8px #25508c44;
+      color: #25508C;
+      text-shadow: 2px 3px 12px #0001, 0 2px 8px #25508c27;
+      line-height: 1.05;
     }
-    .logo-title .reformistas {
+    .header-title .reformistas {
       font-family: 'Raleway', Arial, sans-serif;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       font-weight: bold;
       letter-spacing: 3px;
       color: #3d81e0;
-      text-shadow: 1px 2px 8px #000, 0 1px 7px #25508c33;
+      text-shadow: 1px 2px 8px #0001, 0 1px 7px #25508c1c;
+      line-height: 1.1;
     }
-    .header-nav {
+    /* Banner azul menú centrado */
+    .main-navbar {
+      width: 100vw;
+      background: #25508C;
+      min-height: 64px;
       display: flex;
       align-items: center;
-      gap: 32px;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 0;
+      margin-bottom: 2.3rem;
     }
-    .header-nav a {
+    .main-navbar ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      gap: 6px;
+    }
+    .main-navbar li {
+      margin: 0;
+    }
+    .main-navbar a {
       color: #fff;
       font-family: 'Raleway', Arial, sans-serif;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 1px;
       font-size: 1.13rem;
+      padding: 0.7em 1.7em;
       text-decoration: none;
       opacity: 0.93;
-      padding-bottom: 3px;
+      border: none;
+      background: none;
+      transition: opacity 0.2s, color 0.2s, border-bottom 0.2s;
       border-bottom: 2px solid transparent;
-      transition: opacity 0.2s, border-bottom 0.2s;
+      display: inline-block;
+      text-align: center;
     }
-    .header-nav a.active,
-    .header-nav a:hover,
-    .header-nav a:focus {
+    .main-navbar a.active,
+    .main-navbar a:hover,
+    .main-navbar a:focus {
       opacity: 1;
       border-bottom: 2px solid #fff;
     }
     @media (max-width: 900px) {
-      .main-header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0 8px;
-        min-height: unset;
-      }
-      .header-left { padding-top: 8px; }
-      .logo-img { height: 60px; }
-      .header-nav { gap: 12px; width: 100%; justify-content: center; padding-bottom: 6px; }
-      .header-nav a { font-size: 1rem; }
+      .header-top { flex-direction: column; align-items: center; margin-top: 15px; }
+      .logo-img { position: static; left: unset; top: unset; transform: none; height: 60px; margin-bottom: 7px; }
+      .header-title .feac { font-size: 1.5rem; }
+      .header-title .reformistas { font-size: 0.9rem; }
+      .main-navbar { margin-bottom: 1.2rem; }
+      .main-navbar ul { gap: 1px; }
+      .main-navbar a { padding: 0.7em 0.7em; font-size: 1rem; }
     }
-    /* SERVICIOS */
+    /* Tarjetas de servicio */
     .service-container {
       display: flex;
       flex-direction: column;
@@ -198,22 +222,23 @@
   </style>
 </head>
 <body>
-  <!-- Cabecera igual que contacto -->
-  <header class="main-header">
-    <div class="header-left">
-      <img src="img/feac logo.png" alt="Logo FEAC Reformistas" class="logo-img">
-      <div class="logo-title">
-        <span class="feac">FEAC</span>
-        <span class="reformistas">REFORMISTAS</span>
-      </div>
+  <!-- Header superior: logo a la izquierda, título centrado -->
+  <div class="header-top">
+    <img src="img/feac logo.png" alt="Logo FEAC Reformistas" class="logo-img">
+    <div class="header-title">
+      <span class="feac">FEAC</span>
+      <span class="reformistas">REFORMISTAS</span>
     </div>
-    <nav class="header-nav">
-      <a href="index.html">INICIO</a>
-      <a href="servicios.html" class="active">SERVICIOS</a>
-      <a href="nosotros.html">NOSOTROS</a>
-      <a href="contacto.html">CONTACTO</a>
-    </nav>
-  </header>
+  </div>
+  <!-- Barra azul menú centrado -->
+  <nav class="main-navbar">
+    <ul>
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="servicios.html" class="active">SERVICIOS</a></li>
+      <li><a href="nosotros.html">NOSOTROS</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+    </ul>
+  </nav>
   <!-- Tarjetas de servicios -->
   <main>
     <div class="service-container">
