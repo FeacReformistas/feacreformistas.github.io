@@ -1,182 +1,164 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nosotros | FEAC Reformistas</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700,800&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
   <style>
     body {
-      background: url('img/bg.jpg') center center/cover no-repeat fixed;
+      background: url('img/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
       margin: 0;
-      padding: 0;
       font-family: 'Raleway', Arial, sans-serif;
-      min-height: 100vh;
     }
-    /* Header superior: logo y título */
-    .header-top {
-      width: 100vw;
+    .header-feac {
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: center;
       position: relative;
-      margin-top: 30px;
+      width: 100vw;
+      min-height: 120px;
       margin-bottom: 0;
+      background: transparent;
     }
-    .logo-img {
+    .header-feac .logo-container {
       position: absolute;
-      left: 42px;
+      left: 18px;
       top: 50%;
       transform: translateY(-50%);
-      height: 90px;
-      width: auto;
+      z-index: 2;
+    }
+    .header-feac .logo-container img {
+      height: 110px;
       display: block;
     }
-    .header-title {
+    .header-feac .title-container {
       text-align: center;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.2em;
+      z-index: 1;
     }
-    .header-title .feac {
+    .logo-feac {
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      margin-bottom: 0;
+      box-shadow: none;
+      text-align: center;
+    }
+    .logo-feac .feac {
       font-family: 'Raleway', Arial, sans-serif;
-      font-size: 2.6rem;
+      font-size: 2.2rem;
       font-weight: 100;
       letter-spacing: 7px;
-      color: #25508C;
-      text-shadow: 2px 3px 12px #0001, 0 2px 8px #25508c27;
-      line-height: 1.05;
+      color: #fff;
+      text-shadow: 2px 3px 12px #000, 0 2px 8px #25508c44;
+      line-height: 1.1;
+      display: block;
     }
-    .header-title .reformistas {
+    .logo-feac .reformistas {
       font-family: 'Raleway', Arial, sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: bold;
       letter-spacing: 3px;
       color: #3d81e0;
-      text-shadow: 1px 2px 8px #0001, 0 1px 7px #25508c1c;
-      line-height: 1.1;
+      display: block;
+      margin-top: 4px;
+      text-shadow: 1px 2px 8px #000, 0 1px 7px #25508c33;
     }
-    /* Banner azul menú centrado */
-    .main-navbar {
+    .custom-navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #22509B;
+      height: 58px;
       width: 100vw;
-      background: #25508C;
-      min-height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-sizing: border-box;
-      padding: 0;
-      margin-bottom: 2.3rem;
-    }
-    .main-navbar ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      min-width: 320px;
       margin: 0;
-      padding: 0;
-      list-style: none;
-      gap: 6px;
-    }
-    .main-navbar li {
-      margin: 0;
-    }
-    .main-navbar a {
-      color: #fff;
-      font-family: 'Raleway', Arial, sans-serif;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 1.13rem;
-      padding: 0.7em 1.7em;
-      text-decoration: none;
-      opacity: 0.93;
+      border-radius: 0;
+      box-shadow: 0 7px 24px rgba(0,0,0,0.12);
+      position: relative;
+      z-index: 20;
+      margin-bottom: 0;
       border: none;
-      background: none;
-      transition: opacity 0.2s, color 0.2s, border-bottom 0.2s;
-      border-bottom: 2px solid transparent;
-      display: inline-block;
-      text-align: center;
     }
-    .main-navbar a.active,
-    .main-navbar a:hover,
-    .main-navbar a:focus {
-      opacity: 1;
-      border-bottom: 2px solid #fff;
-    }
-    @media (max-width: 900px) {
-      .header-top { flex-direction: column; align-items: center; margin-top: 15px; }
-      .logo-img { position: static; left: unset; top: unset; transform: none; height: 60px; margin-bottom: 7px; }
-      .header-title .feac { font-size: 1.5rem; }
-      .header-title .reformistas { font-size: 0.9rem; }
-      .main-navbar { margin-bottom: 1.2rem; }
-      .main-navbar ul { gap: 1px; }
-      .main-navbar a { padding: 0.7em 0.7em; font-size: 1rem; }
-    }
-    /* Banner imagen rodillo */
-    .banner-img-container {
+    .custom-navbar ul {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100vw;
-      margin-top: 2.5rem;
-      margin-bottom: 2.5rem;
-      position: relative;
-      z-index: 2;
-    }
-    .banner-img-container img {
-      width: 700px;
-      max-width: 95vw;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-      display: block;
-    }
-    /* Contenido tarjetas */
-    .cuadrados-container {
-      display: flex;
-      gap: 2em;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: row;
       width: 100%;
-      z-index: 3;
-      position: relative;
-      margin-top: 0;
-    }
-    .cuadrado {
-      background: rgba(255,255,255,0.96);
-      width: 400px;
-      border-radius: 10px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.20);
-      padding: 2em 1.3em;
-      margin: 1em 0.5em 2em 0.5em;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      min-height: 200px;
-      max-width: 95vw;
-      overflow: hidden;
-    }
-    .ajustable h1, .ajustable b {
-      text-align: center;
-      display: block;
-      margin-bottom: 0.5em;
-      font-weight: bold;
-    }
-    .ajustable p {
-      text-align: justify;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
       margin: 0;
-      font-size: 1.1rem;
+    }
+    .custom-navbar li {
+      margin: 0 44px;
+      display: flex;
+      align-items: center;
+    }
+    .custom-navbar .nav-link {
+      color: #fff !important;
+      font-weight: bold;
+      font-size: 1.18rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: color 0.17s;
+      text-shadow: 1px 1px 2px #00000030;
+      line-height: 58px;
+      display: inline-block;
+    }
+    .custom-navbar .nav-link.active,
+    .custom-navbar .nav-link:hover {
+      color: #bcd9fa !important;
+      text-decoration: underline;
+    }
+    .nosotros-container {
+      background: rgba(255,255,255,0.95);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+      max-width: 700px;
+      margin: 3rem auto 3rem auto;
+      padding: 2.5rem 2.5rem 2.5rem 2.5rem;
       font-family: 'Lora', serif;
+      color: #222;
+    }
+    .nosotros-container h1 {
+      color: #25508C;
+      margin-top: 0;
+      margin-bottom: 0.8em;
+      font-family: 'Raleway', Arial, sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+    .nosotros-container h2 {
+      color: #3d81e0;
+      font-family: 'Raleway', Arial, sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 1em;
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .nosotros-container p {
+      font-size: 1.12rem;
+      line-height: 1.7;
+      margin-bottom: 1.7em;
+    }
+    @media (max-width: 1100px) {
+      .header-feac { min-height: 70px;}
+      .header-feac .logo-container { left: 8px; }
+      .nosotros-container { padding: 1.5rem; }
     }
     @media (max-width: 900px) {
-      .banner-img-container img { width: 98vw; max-width: 98vw; }
-      .cuadrados-container { flex-direction: column; gap: 1em; align-items: center; }
-      .cuadrado { width: 98vw; max-width: 98vw; padding: 1.2em 0.6em 1.2em 0.6em; }
+      .header-feac .logo-container img { height: 60px; }
+      .nosotros-container { max-width: 97vw; }
+    }
+    @media (max-width: 700px) {
+      .header-feac { min-height: 50px;}
+      .header-feac .logo-container { left: 4px;}
+      .header-feac .logo-container img { height: 56px;}
     }
     footer {
       margin-top: 2em;
@@ -189,50 +171,45 @@
   </style>
 </head>
 <body>
-  <!-- Header superior: logo a la izquierda, título centrado -->
-  <div class="header-top">
-    <img src="img/feac logo.png" alt="Logo FEAC Reformistas" class="logo-img">
-    <div class="header-title">
-      <span class="feac">FEAC</span>
-      <span class="reformistas">REFORMISTAS</span>
+  <!-- CABECERA: Logo a la izquierda, título centrado -->
+  <div class="header-feac">
+    <div class="logo-container">
+      <img src="img/feac logo.png" alt="Logo FEAC Reformistas">
+    </div>
+    <div class="title-container">
+      <div class="logo-feac">
+        <span class="feac">FEAC</span>
+        <span class="reformistas">REFORMISTAS</span>
+      </div>
     </div>
   </div>
   <!-- Barra azul menú centrado -->
-  <nav class="main-navbar">
+  <nav class="custom-navbar">
     <ul>
-      <li><a href="index.html">INICIO</a></li>
-      <li><a href="servicios.html">SERVICIOS</a></li>
-      <li><a href="nosotros.html" class="active">NOSOTROS</a></li>
-      <li><a href="contacto.html">CONTACTO</a></li>
+      <li><a href="index.html" class="nav-link">INICIO</a></li>
+      <li><a href="servicios.html" class="nav-link">SERVICIOS</a></li>
+      <li><a href="nosotros.html" class="nav-link active">NOSOTROS</a></li>
+      <li><a href="contacto.html" class="nav-link">CONTACTO</a></li>
     </ul>
   </nav>
-  <!-- Imagen de rodillo centrada -->
-  <div class="banner-img-container">
-    <img src="img/rodillo.jpg" alt="Rodillo de pintura">
-  </div>
-  <!-- Cuadros de contenido -->
-  <div class="cuadrados-container">
-    <div class="cuadrado">
-      <div class="ajustable">
-        <b>FEAC REFORMISTAS</b>
-        <h1>NOSOTROS</h1>
-        <p>
-          Nuestro principal objetivo es asesorarles en todos los problemas que puedan tener en su inmueble. Nuestro equipo tiene una experiencia de más de 15 años implementando todo tipo de proyectos, siempre ajustándonos a las necesidades específicas de cada cliente. Eso nos ha proporcionado una amplia experiencia que compartimos con nuestros clientes.
-        </p>
-      </div>
+  <main>
+    <div class="nosotros-container">
+      <h1>Sobre FEAC Reformistas</h1>
+      <h2>Tu equipo de confianza en reformas integrales</h2>
+      <p>
+        Somos una empresa dedicada a las reformas integrales en Barcelona y alrededores, con años de experiencia en el sector de la construcción y rehabilitación de edificios.
+      </p>
+      <p>
+        Nuestro equipo está formado por profesionales especializados en electricidad, albañilería, fontanería y carpintería, capaces de ofrecer soluciones completas y personalizadas para cada cliente.
+      </p>
+      <p>
+        Nos distinguimos por nuestra seriedad, compromiso y atención al detalle en cada proyecto, adaptándonos a las necesidades de particulares, comunidades y empresas.
+      </p>
+      <p>
+        Trabajamos con materiales de primera calidad y las técnicas más avanzadas, garantizando resultados duraderos y satisfacción total en cada reforma.
+      </p>
     </div>
-    <div class="cuadrado">
-      <div class="ajustable">
-        <b>VALORES</b>
-        <h1>POR QUÉ ELEGIRNOS</h1>
-        <p>
-          - Nuestro elemento más DIFERENCIADOR es el TRATO PERSONALIZADO, ya que analizamos las necesidades de cada cliente con el objetivo de encontrar una solución integral.<br>
-          - Disponemos de un equipo de profesionales cualificados, expertos en construcción. Le garantizamos resultados de calidad. El servicio que ofrecemos a nuestros clientes nos avala.<br>
-          - COMPROMISO Y EFICACIA, nos esforzamos por convertir a cada cliente en un compromiso profesional y le brindamos una respuesta efectiva a cualquier duda o incidencia.
-        </p>
-      </div>
-    </div>
-  </div>
+  </main>
   <footer>
     &copy; FEAC Reformistas 2018
   </footer>
