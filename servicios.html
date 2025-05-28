@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servicios | FEAC Reformistas</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700,800&display=swap">
-  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
   <style>
     body {
       background: url('img/bg.jpg') center center/cover no-repeat fixed;
@@ -24,61 +23,85 @@
       z-index: -1;
       pointer-events: none;
     }
-    .site-heading {
+    .logo-header {
       text-align: center;
-      margin-top: 38px;
-      margin-bottom: 0;
-      letter-spacing: 1px;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 800;
-      font-size: 2.7rem;
-      color: #fff;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.45);
-      line-height: 1.1;
+      padding: 44px 0 12px 0;
     }
-    .site-heading .site-heading-lower {
+    .logo-header .site-heading-lower {
+      font-size: 3.3rem;
+      color: #222;
+      font-weight: 100;
+      letter-spacing: 2px;
       display: block;
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-    .main-navbar {
-      background: #29529e;
-      font-weight: bold;
-      letter-spacing: 1px;
-      box-shadow: 0 2px 8px rgba(0,0,0,.04);
-      width: 100%;
       margin-bottom: 0;
-      padding: 0;
+      line-height: 1;
     }
-    .main-navbar .navbar-nav {
-      width: 100%;
+    .logo-header .site-heading-upper {
+      font-size: 2.2rem;
+      color: #5ca5e8;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      display: block;
+      margin-top: 0;
+      line-height: 1;
+    }
+    .custom-navbar {
+      width: 100vw;
+      background: #25508C;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+    .custom-navbar ul {
+      display: flex;
       justify-content: center;
       align-items: center;
-    }
-    .main-navbar .nav-link {
-      color: #fff !important;
-      font-size: 1.15rem;
-      text-transform: uppercase;
-      font-weight: bold;
-      letter-spacing: 2px;
-      padding: 18px 38px;
-      transition: background 0.2s, color 0.2s, border-bottom 0.2s;
-      border-radius: 0;
-      border-bottom: 3px solid transparent;
-      position: relative;
-    }
-    .main-navbar .nav-link.active,
-    .main-navbar .nav-link:focus,
-    .main-navbar .nav-link:hover {
-      background: #19305a !important;
-      color: #fff !important;
-      border-bottom: 3px solid #fff;
-    }
-    .main-navbar .nav-item {
       margin: 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+      max-width: 950px;
+      height: 64px;
     }
-    .navbar-brand { display: none !important;}
+    .custom-navbar li {
+      flex: 1 1 0;
+      text-align: center;
+    }
+    .custom-navbar a {
+      display: inline-block;
+      color: #fff;
+      font-family: 'Raleway', Arial, sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.7em 1.7em;
+      font-size: 1.15rem;
+      opacity: 0.93;
+      text-decoration: none;
+      transition: opacity 0.2s, color 0.2s;
+      border: none;
+      background: none;
+    }
+    .custom-navbar a.active,
+    .custom-navbar a:hover,
+    .custom-navbar a:focus {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    .custom-navbar a.disabled {
+      opacity: 0.4;
+      pointer-events: none;
+      cursor: default;
+    }
+    @media (max-width: 900px) {
+      .logo-header { padding-left: 0; }
+      .custom-navbar ul { flex-direction: column; height: auto; }
+      .custom-navbar a { width: 100%; display: block; padding: 1em 0; font-size: 1rem; }
+    }
     .service-card-container {
       display: flex;
       flex-direction: column;
@@ -146,40 +169,27 @@
       padding-left: 22px;
     }
     @media (max-width: 950px) {
-      .main-navbar .nav-link { padding: 14px 12px; }
-      .site-heading { font-size: 1.7rem; }
-      .site-heading .site-heading-lower { font-size: 1.3rem; }
       .service-card { flex-direction: column; align-items: center; }
       .service-card-img { max-width: 95vw; }
       .service-card-text { padding: 24px 16px 16px 16px; }
     }
     @media (max-width: 600px) {
-      .main-navbar .nav-link { font-size: 1rem; padding: 10px 4vw; }
       .service-card { margin: 0 2px; }
     }
   </style>
 </head>
 <body>
-  <!-- Encabezado -->
-  <div class="site-heading text-center">
-    <span class="site-heading-lower">FEAC <span style="color:#2894e2;">REFORMISTAS</span></span>
+  <div class="logo-header">
+    <span class="site-heading-lower">FEAC</span>
+    <span class="site-heading-upper">REFORMISTAS</span>
   </div>
-  <!-- Menú horizontal SOLO dentro del nav -->
-  <nav class="navbar navbar-expand-lg main-navbar">
-    <div class="container-fluid p-0 m-0">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">INICIO</a></li>
-          <li class="nav-item"><a class="nav-link active" href="servicios.html">SERVICIOS</a></li>
-          <li class="nav-item"><a class="nav-link" href="nosotros.html">NOSOTROS</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html">CONTACTO</a></li>
-        </ul>
-      </div>
-    </div>
+  <nav class="custom-navbar">
+    <ul>
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="servicios.html" class="active">SERVICIOS</a></li>
+      <li><a href="nosotros.html">NOSOTROS</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+    </ul>
   </nav>
   <main>
     <section class="service-card-container">
@@ -265,7 +275,5 @@
       </div>
     </section>
   </main>
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
