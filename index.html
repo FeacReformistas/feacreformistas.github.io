@@ -13,19 +13,22 @@
       font-family: 'Raleway', Arial, sans-serif;
     }
 
-    /* LOGO FEAC Y CABECERA */
+    /* CABECERA FLEX: LOGO IZQ, TITULO CENTRO */
     .header-feac {
       display: flex;
       align-items: center;
+      justify-content: center;
+      position: relative;
       width: 100vw;
       min-height: 70px;
-      position: relative;
-      background: transparent;
       margin-bottom: 0;
+      background: transparent;
     }
     .header-feac .logo-container {
-      flex: 0 0 auto;
-      margin-left: 18px;
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
       z-index: 2;
     }
     .header-feac .logo-container img {
@@ -33,11 +36,8 @@
       display: block;
     }
     .header-feac .title-container {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      text-align: center;
       z-index: 1;
-      width: max-content;
     }
     .logo-feac {
       background: none;
@@ -271,12 +271,8 @@
       .servicios-container {
         padding: 16px 8vw 14px 8vw;
       }
-      .header-feac .title-container {
-        position: absolute;
-        left: 50%;
-        top: 20px;
-        transform: translate(-50%, 0);
-        width: 80vw;
+      .header-feac .logo-container {
+        left: 8px;
       }
     }
     @media (max-width: 700px) {
@@ -295,12 +291,8 @@
       .servicios-container h2 {
         font-size: 1.5rem;
       }
-      .header-feac .title-container {
-        position: absolute;
-        left: 50%;
-        top: 15px;
-        transform: translate(-50%, 0);
-        width: 96vw;
+      .header-feac .logo-container {
+        left: 4px;
       }
     }
   </style>
