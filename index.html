@@ -85,7 +85,7 @@
       align-items: center;
     }
     .custom-navbar .nav-link {
-      color: #E3EFFF;
+      color: #fff !important;
       font-weight: bold;
       font-size: 1.18rem;
       letter-spacing: 1px;
@@ -97,7 +97,7 @@
     }
     .custom-navbar .nav-link.active,
     .custom-navbar .nav-link:hover {
-      color: #bcd9fa;
+      color: #bcd9fa !important;
       text-decoration: underline;
     }
 
@@ -285,15 +285,13 @@
     </div>
   </div>
   <!-- Barra azul centrada y horizontal -->
- <nav class="custom-navbar">
-  <ul>
-    <li><a href="index.html">INICIO</a></li>
-    <li><a href="servicios.html">SERVICIOS</a></li>
-    <li><a href="nosotros.html">NOSOTROS</a></li>
-    <li><a href="contacto.html">CONTACTO</a></li>
-  </ul>
-</nav>
-</nav>
+  <nav class="custom-navbar">
+    <ul>
+      <li><a href="index.html" class="nav-link active">INICIO</a></li>
+      <li><a href="servicios.html" class="nav-link">SERVICIOS</a></li>
+      <li><a href="nosotros.html" class="nav-link">NOSOTROS</a></li>
+      <li><a href="contacto.html" class="nav-link">CONTACTO</a></li>
+    </ul>
   </nav>
   <!-- Hero: cuadro blanco a la izquierda, foto a la derecha -->
   <div class="hero-outer">
