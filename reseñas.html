@@ -13,7 +13,6 @@
       margin: 0;
       font-family: 'Raleway', Arial, sans-serif;
     }
-    /* CABECERA FLEX: LOGO IZQ, TITULO CENTRO */
     .header-feac {
       display: flex;
       align-items: center;
@@ -39,14 +38,6 @@
       text-align: center;
       z-index: 1;
     }
-    .logo-feac {
-      background: none;
-      border-radius: 0;
-      padding: 0;
-      margin-bottom: 0;
-      box-shadow: none;
-      text-align: center;
-    }
     .logo-feac .feac {
       font-family: 'Raleway', Arial, sans-serif;
       font-size: 2.2rem;
@@ -67,7 +58,6 @@
       margin-top: 4px;
       text-shadow: 1px 2px 8px #000, 0 1px 7px #25508c33;
     }
-    /* MENÚ AZUL */
     .custom-navbar {
       display: flex;
       justify-content: center;
@@ -114,14 +104,14 @@
       color: #bcd9fa !important;
       text-decoration: underline;
     }
-    /* Tarjetas de servicio */
-    .service-container {
+    /* CONTENEDOR DE TESTIMONIOS EN DOS COLUMNAS */
+    .testimonios-columns {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 2.5rem;
-      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 2.5rem;
+      max-width: 1500px;
+      margin: 2.5rem auto;
     }
     .service-card {
       display: flex;
@@ -135,17 +125,8 @@
       min-height: 220px;
       overflow: hidden;
       padding: 0;
-    }
-    .service-card-img {
-      width: 180px;
-      min-width: 140px;
-      max-width: 220px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 12px 0 0 12px;
-      margin: 24px 0 24px 24px;
-      box-shadow: 0 4px 18px rgba(60,60,60,0.10);
-      background: #fafbfc;
+      margin-bottom: 0;
+      flex-direction: column;
     }
     .service-card-content {
       flex: 1;
@@ -161,6 +142,9 @@
       margin: 0 0 8px 0;
       color: #222;
       text-transform: uppercase;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-weight: 400;
     }
     .service-card-content h1 {
       font-size: 1.4rem;
@@ -170,49 +154,31 @@
       letter-spacing: 1px;
       text-transform: uppercase;
     }
-    .service-card-content ul {
-      color: #393939;
-      font-size: 1.04rem;
-      margin: 0;
-      padding-left: 1.2em;
-      font-family: 'Lora', serif;
-    }
-    .service-card-content li {
-      margin-bottom: 0.4em;
-    }
     @media (max-width: 1100px) {
       .header-feac { min-height: 70px;}
       .header-feac .logo-container { left: 8px; }
+      .testimonios-columns { gap: 1.5rem;}
     }
     @media (max-width: 900px) {
       .header-feac .logo-container img { height: 60px; }
       .service-card {
-        flex-direction: column;
-        align-items: flex-start;
-        min-width: 0;
-        max-width: 97vw;
-        width: 97vw;
-        padding: 0;
-      }
-      .service-card-img {
-        width: 98vw;
-        min-width: 0;
         max-width: 98vw;
-        height: auto;
-        border-radius: 12px 12px 0 0;
-        margin: 0;
-        margin-top: 14px;
-        margin-bottom: 0;
-        align-self: center;
+        min-width: 0;
+        width: 98vw;
       }
       .service-card-content {
         padding: 18px 10px 18px 10px;
+      }
+      .testimonios-columns {
+        flex-direction: column;
+        gap: 1.5rem;
       }
     }
     @media (max-width: 700px) {
       .header-feac { min-height: 50px;}
       .header-feac .logo-container { left: 4px;}
       .header-feac .logo-container img { height: 56px;}
+      .testimonios-columns { gap: 1rem;}
     }
     @media (max-width: 600px) {
       .service-card-content h1 { font-size: 1.1rem; }
@@ -244,7 +210,7 @@
  <!-- Barra azul menú centrado -->
   <nav class="custom-navbar">
     <ul>
-        <li><a href="index.html" class="nav-link active">INICIO</a></li>
+      <li><a href="index.html" class="nav-link active">INICIO</a></li>
       <li><a href="servicios.html" class="nav-link">SERVICIOS</a></li>
       <li><a href="nosotros.html" class="nav-link">NOSOTROS</a></li>
       <li><a href="contacto.html" class="nav-link">CONTACTO</a></li>
@@ -252,61 +218,40 @@
     </ul>
   </nav>
 
-    <div class="service-card">
-         <div class="service-card-content">    
-    
-      <!-- Tarjetas de servicios -->
+  <!-- Testimonios en 2 columnas -->
   <main>
+    <div class="testimonios-columns">
       <div class="service-card">
-         <div class="service-card-content">
+        <div class="service-card-content">
           <h3>"Quiero dar las gracias a todo el equipo de Feac. Me han hecho reforma integral del lavabo, estoy super contenta, la calidad de los acabados es inmejorable, además han cumplido con las fechas pactadas. Son muy buenos profesionales, totalmente recomendables, cuento con ellos para mi próxima reforma."</h3>
           <h1>M.C</h1>
-             </ul>
         </div>
       </div>
-     
-    <!-- Tarjetas de servicios -->
-  <main>
       <div class="service-card">
-         <div class="service-card-content">
+        <div class="service-card-content">
           <h3>"Me hicieron una reforma integral y no puedo estar más contento."</h3>
           <h1>O.G</h1>
-             </ul>
         </div>
-      </div>     
-
-     <!-- Tarjetas de servicios -->
-  <main>
+      </div>
       <div class="service-card">
-         <div class="service-card-content">
+        <div class="service-card-content">
           <h3>"Eficacia y rapidez. Todo muy bien. Grandes profesionales."</h3>
           <h1>D.C y M.M</h1>
-             </ul>
         </div>
-      </div>     
-
-    <!-- Tarjetas de servicios -->
-  <main>
+      </div>
       <div class="service-card">
-         <div class="service-card-content">
-          <h3>"Quisiera dar las gracias a todo el equipo de FEAC, por su profesionalidad, demostrada cada día. La confianza depositada en ellos, en ningún momento me ha defraudado.
-Muchas gracias FEAC."</h3>
+        <div class="service-card-content">
+          <h3>"Quisiera dar las gracias a todo el equipo de FEAC, por su profesionalidad, demostrada cada día. La confianza depositada en ellos, en ningún momento me ha defraudado. Muchas gracias FEAC."</h3>
           <h1>E.V</h1>
-             </ul>
         </div>
-      </div> 
-
-     <!-- Tarjetas de servicios -->
-  <main>
+      </div>
       <div class="service-card">
-         <div class="service-card-content">
-          <h3>Magnifico equipo de profesionales, perfectamente dirigidos por DAVID. Recomendable 100x100. Trabajo perfecto y muy limpios. Su servicio de urgencias muy rápido, efectivo y buen precio. Un 10."</h3>
+        <div class="service-card-content">
+          <h3>"Magnifico equipo de profesionales, perfectamente dirigidos por DAVID. Recomendable 100x100. Trabajo perfecto y muy limpios. Su servicio de urgencias muy rápido, efectivo y buen precio. Un 10."</h3>
           <h1>S.E</h1>
-             </ul>
         </div>
-      </div>     
-    
-    </section>
+      </div>
+    </div>
   </main>
 </body>
 </html>
